@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import type { Dictionary } from "@/dictionaries";
@@ -23,9 +24,17 @@ export default function Header({
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-5 py-3 md:grid-cols-[1fr_auto_1fr] md:px-8">
         <Link
           href={`/${lang}`}
-          className="font-serif text-2xl font-semibold tracking-tight md:text-3xl"
+          className="justify-self-start rounded-sm"
         >
-          Tavren
+          <Image
+            src="/logo-tavren.png"
+            alt="Tavren"
+            width={1007}
+            height={260}
+            sizes="110px"
+            priority
+            className="h-[22px] w-auto mix-blend-multiply md:h-7"
+          />
         </Link>
 
         <nav

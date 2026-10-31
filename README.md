@@ -25,6 +25,10 @@ Los libros que solo existen en un idioma aparecen en la otra versión bajo la pa
 
 Los textos de interfaz y las citas están en `dictionaries/en.ts` y `dictionaries/es.ts`. Los colores de marca, en `tailwind.config.ts`.
 
+## Logo
+
+El logo está en `public/logo-tavren.png`; para cambiarlo basta con sustituir ese archivo (`public/logo-tavren-original.png` es el original sin recortar).
+
 ## Desplegar en Vercel
 
 1. Sube el repositorio a GitHub.
