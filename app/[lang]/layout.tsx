@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries";
-import { books } from "@/data/books";
 import { LANGS, SITE_URL, isLang } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import LangSync from "@/components/LangSync";
@@ -50,12 +49,6 @@ export default async function LangLayout({
   if (!isLang(lang)) notFound();
   const dict = getDictionary(lang);
 
-  // Slugs disponibles en ambos idiomas (para que el selector de idioma
-  // en una ficha no lleve a un 404).
-  const bilingualSlugs = books
-    .filter((b) => b.translations.en && b.translations.es)
-    .map((b) => b.slug);
-
   return (
     <>
       <LangSync lang={lang} />
@@ -65,7 +58,7 @@ export default async function LangLayout({
       >
         {dict.skipToContent}
       </a>
-      <Header lang={lang} dict={dict} bilingualSlugs={bilingualSlugs} />
+      <Header lang={lang} dict={dict} />
       <main id="main">{children}</main>
       <Footer lang={lang} dict={dict} />
     </>

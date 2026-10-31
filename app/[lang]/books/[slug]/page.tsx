@@ -11,22 +11,17 @@ import Gallery from "@/components/Gallery";
 import BuyBox from "@/components/BuyBox";
 import Accordion from "@/components/Accordion";
 
-/** Descripción corta: shortDescription o las dos primeras frases. */
+/** getBookContent ya rellena shortDescription (o la deriva de la descripción). */
 function shortDescription(book: LocalizedBook): string {
-  if (book.shortDescription) return book.shortDescription;
-  return book.description
-    .split(/(?<=[.!?])\s+/)
-    .slice(0, 2)
-    .join(" ");
+  return book.shortDescription ?? "";
 }
 
 export const dynamicParams = false;
 
+// Todos los libros existen en /es y /en.
 export function generateStaticParams() {
   return LANGS.flatMap((lang) =>
-    books
-      .filter((b) => b.translations[lang])
-      .map((b) => ({ lang, slug: b.slug })),
+    books.map((b) => ({ lang, slug: b.slug })),
   );
 }
 
@@ -39,20 +34,15 @@ export async function generateMetadata({
   if (!isLang(lang)) return {};
   const book = getBook(lang, slug);
   if (!book) return {};
-  const source = books.find((b) => b.slug === slug)!;
   const languages = Object.fromEntries(
-    LANGS.filter((l) => source.translations[l]).map((l) => [
-      l,
-      `/${l}/books/${slug}`,
-    ]),
+    LANGS.map((l) => [l, `/${l}/books/${slug}`]),
   );
   return {
     title: { absolute: `${book.title} — ${book.author} | Tavren` },
     description: shortDescription(book),
     alternates: {
       canonical: `/${lang}/books/${slug}`,
-      // hreflang solo si el libro existe en los dos idiomas.
-      ...(Object.keys(languages).length > 1 ? { languages } : {}),
+      languages: { ...languages, "x-default": `/en/books/${slug}` },
     },
     openGraph: {
       title: `${book.title} — ${book.author}`,
@@ -128,7 +118,8 @@ export default async function BookPage({
       label: t.detailLabels.formats,
       value: book.formats.map((f) => formatLabels[f]).join(" · "),
     },
-    { label: t.detailLabels.language, value: t.languageNames[lang] },
+    // Idioma del libro, no el de la página.
+    { label: t.detailLabels.language, value: t.languageNames[book.language] },
     {
       label: t.detailLabels.pages,
       value: book.details.pages ? String(book.details.pages) : "",
@@ -174,6 +165,11 @@ export default async function BookPage({
             {shortDescription(book)}
           </p>
           <hr className="my-6 border-line" />
+          {book.language !== "both" && book.language !== lang && (
+            <p className="mb-3 text-xs text-ink/65">
+              {t.writtenIn[book.language]}
+            </p>
+          )}
           <BuyBox
             formats={book.formats}
             labels={formatLabels}

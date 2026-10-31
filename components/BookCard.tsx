@@ -46,7 +46,6 @@ export default function BookCard({
   return (
     <Link
       href={book.href}
-      hrefLang={book.langTag?.toLowerCase()}
       className="group relative flex h-full flex-col items-center border border-line bg-mist p-5 pt-12 transition-colors duration-150 hover:border-ink/40"
     >
       <span

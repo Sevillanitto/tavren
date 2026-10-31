@@ -113,7 +113,11 @@ export const es: Dictionary = {
       isbn: "ISBN",
     },
     seriesLine: "Libro {n} de la serie {series}",
-    languageNames: { en: "Inglés", es: "Español" },
+    languageNames: { en: "Inglés", es: "Español", both: "Español e inglés" },
+    writtenIn: {
+      es: "Este libro está escrito en español.",
+      en: "Este libro está escrito en inglés.",
+    },
   },
   notFound: {
     title: "Página no encontrada",

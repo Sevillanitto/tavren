@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import { getBooks, type LocalizedBook } from "@/data/books";
 import { PLACEHOLDER_COVER, resolveCover } from "@/lib/covers";
-import { isLang, otherLang, type Lang } from "@/lib/i18n";
+import { isLang } from "@/lib/i18n";
 import Hero from "@/components/Hero";
 import Catalog from "@/components/Catalog";
 
@@ -15,8 +15,13 @@ export default async function HomePage({
   if (!isLang(lang)) notFound();
   const dict = getDictionary(lang);
 
-  const other = otherLang(lang);
-  const toCard = (b: LocalizedBook, bookLang: Lang, group: "own" | "other") => ({
+  // Vista por defecto: libros escritos en el idioma de la página o en ambos.
+  // "other": escritos solo en el otro idioma (pastilla de idioma). Todas las
+  // tarjetas enlazan a la ficha en el idioma de la página actual.
+  const toCard = (b: LocalizedBook) => {
+    const group: "own" | "other" =
+      b.language === "both" || b.language === lang ? "own" : "other";
+    return {
     slug: b.slug,
     title: b.title,
     author: b.author,
@@ -27,19 +32,13 @@ export default async function HomePage({
     // El placeholder es una imagen plana: no se funde con multiply.
     coverStyle:
       resolveCover(b.cover) === PLACEHOLDER_COVER ? "flat" : b.coverStyle,
-    href: `/${bookLang}/books/${b.slug}`,
-    langTag: group === "other" ? bookLang.toUpperCase() : undefined,
+    href: `/${lang}/books/${b.slug}`,
+    // Idioma del libro, solo si no coincide con el de la página.
+    langTag: group === "other" ? b.language.toUpperCase() : undefined,
     group,
-  });
-  const ownBooks = getBooks(lang);
-  const ownSlugs = new Set(ownBooks.map((b) => b.slug));
-  const books = [
-    ...ownBooks.map((b) => toCard(b, lang, "own")),
-    // Libros que solo existen en el otro idioma.
-    ...getBooks(other)
-      .filter((b) => !ownSlugs.has(b.slug))
-      .map((b) => toCard(b, other, "other")),
-  ];
+    };
+  };
+  const books = getBooks(lang).map(toCard);
 
   return (
     <>

@@ -12,20 +12,14 @@ export function setLangCookie(lang: Lang) {
 export default function LangSwitch({
   lang,
   dict,
-  bilingualSlugs,
 }: {
   lang: Lang;
   dict: Dictionary;
-  bilingualSlugs: string[];
 }) {
   const pathname = usePathname() ?? `/${lang}`;
-  const [, , section, slug] = pathname.split("/");
 
+  // Misma ruta con el prefijo de idioma cambiado (todas las fichas existen en es y en).
   function hrefFor(target: Lang) {
-    // Ficha de libro: solo se mantiene si existe en el otro idioma.
-    if (section === "books" && slug && !bilingualSlugs.includes(slug)) {
-      return `/${target}`;
-    }
     const rest = pathname.split("/").slice(2).join("/");
     return rest ? `/${target}/${rest}` : `/${target}`;
   }

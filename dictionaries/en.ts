@@ -111,7 +111,11 @@ export const en = {
       isbn: "ISBN",
     },
     seriesLine: "Book {n} of the {series} series",
-    languageNames: { en: "English", es: "Spanish" },
+    languageNames: { en: "English", es: "Spanish", both: "Spanish and English" },
+    writtenIn: {
+      es: "This book is written in Spanish.",
+      en: "This book is written in English.",
+    },
   },
   notFound: {
     title: "Page not found",

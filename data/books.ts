@@ -9,6 +9,9 @@ import type { Lang } from "@/lib/i18n";
  */
 export type Category = "noir" | "cooking" | "kids" | "notebooks";
 
+/** Idioma en el que está escrito el libro ("both": ambos). */
+export type BookLanguage = Lang | "both";
+
 export interface BookTranslation {
   title: string;
   subtitle: string;
@@ -29,11 +32,16 @@ export interface BookDetails {
   dimensions?: { width: number; height: number };
 }
 
+/** Contenido de un idioma; lo que falte se toma del idioma original (ver getBookContent). */
+export type BookContent = Partial<BookTranslation>;
+
 export type CoverStyle = "mockup" | "flat";
 export type BookFormat = "ebook" | "paperback" | "hardcover";
 
 export interface Book {
   slug: string;
+  /** Idioma en el que está escrito el libro (no el de la ficha). */
+  language: BookLanguage;
   category: Category;
   author: string; // nombre mostrado en las tarjetas
   authorId: string; // id en data/authors.ts
@@ -49,8 +57,12 @@ export interface Book {
   /** "mockup": imagen 3D con fondo blanco que flota (multiply); "flat": portada plana con sombra. Por defecto "mockup". */
   coverStyle?: CoverStyle;
   isNew: boolean;
-  /** Un libro solo aparece en los idiomas en los que tiene entrada aquí. */
-  translations: Partial<Record<Lang, BookTranslation>>;
+  /**
+   * Contenido por idioma. Todos los libros tienen ficha en es y en: si falta
+   * un campo en un idioma se usa el del idioma original del libro.
+   * El título no se traduce: si falta, se usa el original.
+   */
+  translations: Partial<Record<Lang, BookContent>>;
   details: BookDetails;
 }
 
@@ -60,8 +72,9 @@ export interface Book {
  */
 export const books: Book[] = [
   {
-    // Libro real (solo en español). Descripción y detalles: pendientes de rellenar.
+    // Libro real (escrito en español, con ficha también en inglés).
     slug: "lo-que-enterramos-antes-de-tiempo",
+    language: "es",
     authorId: "andre-olvera",
     gallery: [
       "/books/lo-que-enterramos-antes-de-tiempo/1.jpg",
@@ -95,6 +108,16 @@ export const books: Book[] = [
           "Una novela coral de misterio con ritmo de thriller, varias líneas de tiempo y un caso que se arma pieza a pieza.",
         amazonUrl: "#",
       },
+      en: {
+        subtitle: "A thriller",
+        shortDescription:
+          "An ensemble mystery novel with the pace of a thriller, multiple timelines and a case that comes together piece by piece.",
+        description:
+          "In New York, thousands of people cross paths every day without knowing anything about each other. They share the same subway, the same neighborhood, sometimes the same wall. Each one with their own story, their own secrets, and something they have never told anyone.\n" +
+          "A screenwriter who needs to understand what happened. A chef who never speaks of his past. An inspector who has never managed to close a case. A detective who hides more than he says.\n" +
+          "In November 2018, a series of deaths in Queens puts them on the same path. Sometimes stories don't cross by chance. None of them yet knows what connects them, and when they find out, nothing they thought they knew will be left standing.\n" +
+          "An ensemble mystery novel with the pace of a thriller, multiple timelines and a case that comes together piece by piece.",
+      },
     },
     details: {
       publisher: "Tavren",
@@ -106,8 +129,9 @@ export const books: Book[] = [
     },
   },
   {
-    // EJEMPLO — libro de cocina solo en inglés
+    // EJEMPLO — libro de cocina escrito en inglés
     slug: "example-sunday-table",
+    language: "en",
     authorId: "andre-olvera",
     gallery: [
       "/books/example-sunday-table/1.jpg",
@@ -129,6 +153,11 @@ export const books: Book[] = [
           "EXAMPLE. Placeholder text: slow recipes for long lunches, from simple soups to showstopping roasts.",
         amazonUrl: "#",
       },
+      es: {
+        subtitle: "Un libro de cocina de ejemplo",
+        description:
+          "EJEMPLO. Texto ficticio de relleno: recetas pausadas para comidas largas, desde sopas sencillas hasta asados de lucimiento.",
+      },
     },
     details: {
       publicationDate: "2024-09-02",
@@ -140,6 +169,7 @@ export const books: Book[] = [
   {
     // EJEMPLO — infantil en ambos idiomas
     slug: "ejemplo-el-zorro-y-la-luna",
+    language: "both",
     authorId: "andre-olvera",
     gallery: [
       "/books/ejemplo-el-zorro-y-la-luna/1.jpg",
@@ -177,8 +207,9 @@ export const books: Book[] = [
     },
   },
   {
-    // EJEMPLO — cuaderno solo en inglés
+    // EJEMPLO — cuaderno escrito en inglés
     slug: "example-blank-pages",
+    language: "en",
     authorId: "andre-olvera",
     gallery: [
       "/books/example-blank-pages/1.jpg",
@@ -200,6 +231,11 @@ export const books: Book[] = [
           "EXAMPLE. Placeholder text: a dotted-paper notebook for ideas, lists and half-finished sketches.",
         amazonUrl: "#",
       },
+      es: {
+        subtitle: "Un cuaderno de ejemplo",
+        description:
+          "EJEMPLO. Texto ficticio de relleno: un cuaderno de papel punteado para ideas, listas y bocetos a medias.",
+      },
     },
     details: {
       publicationDate: "2024-11-20",
@@ -213,6 +249,7 @@ export const books: Book[] = [
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
 export interface LocalizedBook extends BookTranslation {
   slug: string;
+  language: BookLanguage;
   category: Category;
   author: string;
   authorId: string;
@@ -228,12 +265,52 @@ export interface LocalizedBook extends BookTranslation {
   details: BookDetails & { publisher: string };
 }
 
-function localize(book: Book, lang: Lang): LocalizedBook | null {
-  const t = book.translations[lang];
-  if (!t) return null;
+/** Idioma original del libro; "both" usa el español como respaldo. */
+export function originalLang(book: Book): Lang {
+  return book.language === "en" ? "en" : "es";
+}
+
+/** Las dos primeras frases de un texto. */
+export function firstSentences(text: string, n = 2): string {
+  return text
+    .split("\n")[0]
+    .split(/(?<=[.!?])\s+/)
+    .slice(0, n)
+    .join(" ");
+}
+
+const filled = (v: string | undefined): v is string => !!v && v.trim() !== "";
+
+/**
+ * Contenido del libro en el idioma pedido. Si falta algún campo se usa el del
+ * idioma original. Nunca devuelve undefined.
+ */
+export function getBookContent(book: Book, lang: Lang): BookTranslation {
+  const own = book.translations[lang] ?? {};
+  const orig = book.translations[originalLang(book)] ?? {};
+  const description = own.description ?? orig.description ?? "";
+  const shortDescription = filled(own.shortDescription)
+    ? own.shortDescription
+    : filled(own.description)
+      ? firstSentences(own.description)
+      : filled(orig.shortDescription)
+        ? orig.shortDescription
+        : firstSentences(description);
   return {
-    ...t,
+    title: filled(own.title) ? own.title : (orig.title ?? ""),
+    subtitle: own.subtitle ?? orig.subtitle ?? "",
+    shortDescription,
+    description,
+    amazonUrl: filled(own.amazonUrl) ? own.amazonUrl : (orig.amazonUrl ?? "#"),
+  };
+}
+
+function localize(book: Book, lang: Lang): LocalizedBook {
+  const c = getBookContent(book, lang);
+  return {
+    ...c,
     slug: book.slug,
+    language: book.language,
     category: book.category,
     author: book.author,
     authorId: book.authorId,
@@ -250,10 +327,12 @@ function localize(book: Book, lang: Lang): LocalizedBook | null {
   };
 }
 
+/** Todos los libros, con el contenido en el idioma pedido. */
 export function getBooks(lang: Lang): LocalizedBook[] {
-  return books.flatMap((b) => localize(b, lang) ?? []);
+  return books.map((b) => localize(b, lang));
 }
 
+/** null solo si el slug no existe. */
 export function getBook(lang: Lang, slug: string): LocalizedBook | null {
   const book = books.find((b) => b.slug === slug);
   return book ? localize(book, lang) : null;

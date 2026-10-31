@@ -7,11 +7,9 @@ import LangSwitch from "./LangSwitch";
 export default function Header({
   lang,
   dict,
-  bilingualSlugs,
 }: {
   lang: Lang;
   dict: Dictionary;
-  bilingualSlugs: string[];
 }) {
   const links = [
     { href: `/${lang}#books`, label: dict.nav.books },
@@ -53,7 +51,7 @@ export default function Header({
         </nav>
 
         <div className="justify-self-end md:col-start-3 md:row-start-1">
-          <LangSwitch lang={lang} dict={dict} bilingualSlugs={bilingualSlugs} />
+          <LangSwitch lang={lang} dict={dict} />
         </div>
       </div>
     </header>
