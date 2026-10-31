@@ -98,6 +98,10 @@ export default function Catalog({
                   book={b}
                   newLabel={dict.catalog.new}
                   coverOf={dict.book.coverOf}
+                  categoryLabel={dict.catalog.categories[b.category]}
+                  formatsText={b.formats
+                    .map((f) => dict.catalog.formats[f])
+                    .join(" · ")}
                 />
               </li>
             ))}

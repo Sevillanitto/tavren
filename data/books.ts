@@ -24,9 +24,13 @@ export interface BookDetails {
   isbn: string;
 }
 
+export type BookFormat = "ebook" | "paperback" | "hardcover";
+
 export interface Book {
   slug: string;
   category: Category;
+  author: string;
+  formats: BookFormat[]; // formatos disponibles
   collection: string; // texto libre
   cover: string; // ruta bajo /public, p. ej. "/covers/mi-libro.jpg"
   isNew: boolean;
@@ -41,16 +45,18 @@ export interface Book {
  */
 export const books: Book[] = [
   {
-    // EJEMPLO — novela solo en español
-    slug: "ejemplo-la-casa-del-faro",
+    // Libro real (solo en español). Descripción y detalles: pendientes de rellenar.
+    slug: "lo-que-enterramos-antes-de-tiempo",
     category: "noir",
+    author: "André Olvera",
+    formats: ["ebook", "paperback", "hardcover"],
     collection: "Narrativa Tavren",
-    cover: "/covers/ejemplo-la-casa-del-faro.jpg",
-    isNew: true,
+    cover: "/covers/lo-que-enterramos-antes-de-tiempo.png",
+    isNew: false,
     translations: {
       es: {
-        title: "EJEMPLO: La casa del faro",
-        subtitle: "Una novela de ejemplo",
+        title: "Lo que enterramos antes de tiempo",
+        subtitle: "",
         description:
           "EJEMPLO. Texto ficticio de relleno: una historia de secretos familiares en un pueblo costero donde el invierno nunca termina de irse.",
         amazonUrl: "#",
@@ -67,6 +73,8 @@ export const books: Book[] = [
     // EJEMPLO — libro de cocina solo en inglés
     slug: "example-sunday-table",
     category: "cooking",
+    author: "André Olvera",
+    formats: ["paperback"],
     collection: "World Kitchen Notebooks",
     cover: "/covers/example-sunday-table.jpg",
     isNew: false,
@@ -90,6 +98,8 @@ export const books: Book[] = [
     // EJEMPLO — infantil en ambos idiomas
     slug: "ejemplo-el-zorro-y-la-luna",
     category: "kids",
+    author: "André Olvera",
+    formats: ["paperback"],
     collection: "Tavren Kids",
     cover: "/covers/ejemplo-el-zorro-y-la-luna.jpg",
     isNew: true,
@@ -120,6 +130,8 @@ export const books: Book[] = [
     // EJEMPLO — cuaderno solo en inglés
     slug: "example-blank-pages",
     category: "notebooks",
+    author: "André Olvera",
+    formats: ["paperback"],
     collection: "Tavren Notebooks",
     cover: "/covers/example-blank-pages.jpg",
     isNew: false,
@@ -145,6 +157,8 @@ export const books: Book[] = [
 export interface LocalizedBook extends BookTranslation {
   slug: string;
   category: Category;
+  author: string;
+  formats: BookFormat[];
   collection: string;
   cover: string;
   isNew: boolean;
@@ -158,6 +172,8 @@ function localize(book: Book, lang: Lang): LocalizedBook | null {
     ...t,
     slug: book.slug,
     category: book.category,
+    author: book.author,
+    formats: book.formats,
     collection: book.collection,
     cover: book.cover,
     isNew: book.isNew,

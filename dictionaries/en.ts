@@ -56,6 +56,11 @@ export const en = {
     new: "New",
     empty: "No books in this category yet.",
     otherLang: "Books in Spanish",
+    formats: {
+      ebook: "Ebook",
+      paperback: "Paperback",
+      hardcover: "Hardcover",
+    },
     categories: {
       all: "All",
       noir: "Noir",

@@ -19,7 +19,8 @@ export default async function HomePage({
   const toCard = (b: LocalizedBook, bookLang: Lang, group: "own" | "other") => ({
     slug: b.slug,
     title: b.title,
-    collection: b.collection,
+    author: b.author,
+    formats: b.formats,
     category: b.category,
     isNew: b.isNew,
     cover: resolveCover(b.cover),

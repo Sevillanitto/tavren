@@ -58,6 +58,11 @@ export const es: Dictionary = {
     new: "Nuevo",
     empty: "Todavía no hay libros en esta categoría.",
     otherLang: "En inglés",
+    formats: {
+      ebook: "Ebook",
+      paperback: "Tapa blanda",
+      hardcover: "Tapa dura",
+    },
     categories: {
       all: "Todos",
       noir: "Novela negra",

@@ -69,6 +69,10 @@ export default async function BookPage({
       <h1 className="mt-10 font-serif text-4xl font-semibold leading-tight md:text-5xl">
         {book.title}
       </h1>
+      <p className="mt-3 text-lg text-ink/75">{book.author}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ink/70">
+        {book.formats.map((f) => dict.catalog.formats[f]).join(" · ")}
+      </p>
       <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/85">
         {book.description}
       </p>
