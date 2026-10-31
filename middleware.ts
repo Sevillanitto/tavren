@@ -14,8 +14,16 @@ function fromAcceptLanguage(header: string | null): Lang {
   return first?.tag.startsWith("es") ? "es" : "en";
 }
 
-// Solo se ejecuta en "/": la cookie "lang" manda sobre el idioma del navegador.
 export function middleware(request: NextRequest) {
+  // /en y /es: pasa el idioma de la ruta al layout raíz en la cabecera x-lang.
+  const pathLang = request.nextUrl.pathname.split("/")[1];
+  if (isLang(pathLang)) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-lang", pathLang);
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
+
+  // "/": la cookie "lang" manda sobre el idioma del navegador.
   const cookie = request.cookies.get("lang")?.value;
   const lang: Lang =
     cookie && isLang(cookie)
@@ -29,4 +37,4 @@ export function middleware(request: NextRequest) {
   return response;
 }
 
-export const config = { matcher: ["/"] };
+export const config = { matcher: ["/", "/(en|es)", "/(en|es)/:path*"] };
