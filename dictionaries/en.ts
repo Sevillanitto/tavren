@@ -87,7 +87,6 @@ export const en = {
   },
   book: {
     buy: "Buy on Amazon",
-    opensOnAmazon: "Opens on Amazon",
     back: "← Books",
     coverOf: "Cover of",
     galleryLabel: "Image gallery",

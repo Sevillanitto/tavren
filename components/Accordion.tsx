@@ -22,10 +22,10 @@ export default function Accordion({
           aria-expanded={open}
           aria-controls={id}
           onClick={() => setOpen((v) => !v)}
-          className="flex w-full items-center justify-between py-5 text-left text-sm font-medium uppercase tracking-[0.2em]"
+          className="flex w-full items-center justify-between h-14 text-left text-xs font-normal uppercase tracking-[0.14em]"
         >
           {title}
-          <span aria-hidden="true" className="text-xl font-light leading-none">
+          <span aria-hidden="true" className="text-xl font-extralight leading-none">
             {open ? "−" : "+"}
           </span>
         </button>

@@ -118,15 +118,15 @@ export default async function BookPage({
   ].filter((r) => r.value);
 
   return (
-    <article className="mx-auto max-w-[1280px] px-5 py-8 md:px-8 md:py-12">
+    <article className="mx-auto max-w-[1400px] px-5 py-8 md:px-10 md:py-12">
       <Link
         href={`/${lang}#books`}
-        className="rounded-sm text-sm text-ink/75 hover:text-ink"
+        className="rounded-sm text-[13px] text-ink/65 hover:text-ink"
       >
         {t.back}
       </Link>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
+      <div className="mt-8 grid items-start gap-10 lg:grid-cols-[62fr_38fr] lg:gap-16">
         <Gallery
           images={gallery}
           label={t.galleryLabel}
@@ -134,19 +134,21 @@ export default async function BookPage({
         />
 
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-ink/70">
+          <p className="text-[13px] tracking-[0.08em] text-ink/70">
             {book.author}
           </p>
-          <h1 className="mt-3 font-serif text-3xl uppercase leading-tight tracking-[0.12em] md:text-4xl">
+          <h1 className="mt-2 font-serif text-[clamp(26px,2.6vw,38px)] font-normal uppercase leading-[1.25] tracking-[0.06em] text-ink">
             {book.title}
           </h1>
           {book.subtitle && (
-            <p className="mt-3 text-xs uppercase tracking-[0.18em] text-ink/70">
+            <p className="mt-2 font-serif text-[15px] uppercase tracking-[0.08em] text-ink/70">
               {book.subtitle}
             </p>
           )}
           <hr className="my-6 border-line" />
-          <p className="leading-relaxed text-ink/85">{shortDescription(book)}</p>
+          <p className="text-[15px] leading-[1.8] text-ink/85">
+            {shortDescription(book)}
+          </p>
           <hr className="my-6 border-line" />
           <BuyBox
             formats={book.formats}
@@ -155,7 +157,6 @@ export default async function BookPage({
             fallbackUrl={book.amazonUrl}
             formatLabel={t.formatLabel}
             buyLabel={t.buy}
-            noteLabel={t.opensOnAmazon}
           />
         </div>
       </div>

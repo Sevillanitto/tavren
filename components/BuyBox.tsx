@@ -10,7 +10,6 @@ export default function BuyBox({
   fallbackUrl,
   formatLabel,
   buyLabel,
-  noteLabel,
 }: {
   formats: BookFormat[];
   labels: Record<BookFormat, string>;
@@ -18,7 +17,6 @@ export default function BuyBox({
   fallbackUrl: string;
   formatLabel: string;
   buyLabel: string;
-  noteLabel: string;
 }) {
   const [format, setFormat] = useState<BookFormat>(
     formats.includes("paperback") ? "paperback" : formats[0],
@@ -30,7 +28,7 @@ export default function BuyBox({
       <div
         role="group"
         aria-label={formatLabel}
-        className="flex flex-wrap gap-2"
+        className="flex flex-wrap gap-x-5 gap-y-2"
       >
         {formats.map((f) => (
           <button
@@ -38,10 +36,10 @@ export default function BuyBox({
             type="button"
             aria-pressed={f === format}
             onClick={() => setFormat(f)}
-            className={`rounded-sm border px-3 py-2 text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-150 ${
+            className={`text-xs uppercase tracking-[0.14em] ${
               f === format
-                ? "border-ink text-ink"
-                : "border-pill text-ink/75 hover:border-ink/50"
+                ? "text-ink underline decoration-1 underline-offset-[6px]"
+                : "text-ink/60 hover:text-ink"
             }`}
           >
             {labels[f]}
@@ -53,11 +51,10 @@ export default function BuyBox({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 block bg-ink px-6 py-4 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
+        className="mt-6 flex h-12 items-center justify-center bg-ink px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
       >
         {buyLabel}
       </a>
-      <p className="mt-2 text-center text-xs text-ink/70">{noteLabel}</p>
     </div>
   );
 }

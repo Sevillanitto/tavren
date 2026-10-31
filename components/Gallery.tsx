@@ -42,9 +42,9 @@ export default function Gallery({
       role="group"
       aria-label={label}
       onKeyDown={onKeyDown}
-      className="flex flex-col gap-4 md:flex-row"
+      className="flex flex-col gap-6 md:flex-row md:gap-4"
     >
-      <div className="order-2 flex gap-3 overflow-x-auto md:order-1 md:flex-col md:overflow-visible">
+      <div className="order-2 flex items-start gap-[15px] overflow-x-auto md:order-1 md:flex-col md:overflow-visible">
         {images.map((img, i) => (
           <button
             key={i}
@@ -55,33 +55,35 @@ export default function Gallery({
             aria-current={i === active ? "true" : undefined}
             aria-label={showViewLabel.replace("{n}", String(i + 1))}
             onClick={() => setActive(i)}
-            className={`h-20 w-20 flex-none border bg-white p-1 transition-colors duration-150 md:h-24 md:w-24 ${
+            className={`w-[68px] flex-none rounded-sm border p-0.5 ${
               i === active
                 ? "border-ink"
-                : "border-line hover:border-pill"
+                : "border-transparent opacity-75 hover:opacity-100"
             }`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img.src}
               alt={img.thumbAlt}
-              width={96}
-              height={96}
+              width={68}
+              height={68}
               loading="lazy"
-              className="aspect-square h-full w-full object-contain"
+              className="h-auto w-full object-contain mix-blend-multiply"
             />
           </button>
         ))}
       </div>
 
-      <div className="order-1 flex-1 md:order-2">
+      <div className="order-1 flex flex-1 items-start justify-center px-2 md:order-2 md:px-6">
+        {/* key: reinicia el fundido de 150 ms al cambiar de foto */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
+          key={images[active].src + active}
           src={images[active].src}
           alt={images[active].alt}
           width={800}
           height={800}
-          className="aspect-square w-full bg-white object-contain"
+          className="gallery-fade h-auto max-h-[640px] w-auto max-w-full object-contain mix-blend-multiply"
         />
       </div>
     </div>
