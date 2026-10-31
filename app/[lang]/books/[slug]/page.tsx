@@ -100,10 +100,29 @@ export default async function BookPage({
         timeZone: "UTC",
       }).format(new Date(book.details.publicationDate))
     : "";
+  // Serie: "Fractura" en Detalles; "Libro 1 de la serie Fractura" bajo el subtítulo.
+  const seriesText = book.series
+    ? book.seriesNumber
+      ? `${book.series} #${book.seriesNumber}`
+      : book.series
+    : "";
+  const seriesLine =
+    book.series && book.seriesNumber
+      ? t.seriesLine
+          .replace("{n}", String(book.seriesNumber))
+          .replace("{series}", book.series)
+      : "";
+  // Medidas guardadas en cm; coma decimal en ES y punto en EN.
+  const numFmt = new Intl.NumberFormat(lang, { maximumFractionDigits: 2 });
+  const dims = book.details.dimensions;
+  const dimensions = dims
+    ? `${numFmt.format(dims.width)} × ${numFmt.format(dims.height)} cm`
+    : "";
   // Solo se muestran las filas que tengan valor.
   const rows = [
     { label: t.detailLabels.publisher, value: book.details.publisher },
     { label: t.detailLabels.author, value: book.author },
+    { label: t.detailLabels.series, value: seriesText },
     { label: t.detailLabels.publicationDate, value: date },
     {
       label: t.detailLabels.formats,
@@ -114,7 +133,9 @@ export default async function BookPage({
       label: t.detailLabels.pages,
       value: book.details.pages ? String(book.details.pages) : "",
     },
+    { label: t.detailLabels.dimensions, value: dimensions },
     { label: t.detailLabels.isbn, value: book.details.isbn ?? "" },
+    { label: t.detailLabels.asin, value: book.details.asin ?? "" },
   ].filter((r) => r.value);
 
   return (
@@ -145,6 +166,9 @@ export default async function BookPage({
               {book.subtitle}
             </p>
           )}
+          {seriesLine && (
+            <p className="mt-3 text-[13px] text-ink/65">{seriesLine}</p>
+          )}
           <hr className="my-6 border-line" />
           <p className="text-[15px] leading-[1.8] text-ink/85">
             {shortDescription(book)}
@@ -164,7 +188,7 @@ export default async function BookPage({
       <div className="mt-14 border-t border-line">
         <Accordion title={t.sections.description} defaultOpen>
           <div className="max-w-3xl space-y-4 leading-relaxed text-ink/85">
-            {book.description.split("\n").map((p, i) => (
+            {book.description.split("\n").filter(Boolean).map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>

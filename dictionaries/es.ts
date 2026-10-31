@@ -103,12 +103,16 @@ export const es: Dictionary = {
     detailLabels: {
       publisher: "Editorial",
       author: "Autor",
+      series: "Serie",
+      dimensions: "Dimensiones",
+      asin: "ASIN",
       publicationDate: "Fecha de publicación",
       formats: "Formatos disponibles",
       language: "Idioma",
       pages: "Páginas",
       isbn: "ISBN",
     },
+    seriesLine: "Libro {n} de la serie {series}",
     languageNames: { en: "Inglés", es: "Español" },
   },
   notFound: {

@@ -20,7 +20,9 @@ Comprobar el build de producción: `npm run build && npm start`.
 4. Edita `data/books.ts` y añade un objeto al array `books`:
    - `slug`, `authorId` (id del autor), `author` (nombre para las tarjetas), `formats`, `gallery` (las 4 rutas de `/books/<slug>/…`), `amazonUrls` (opcional: un enlace por formato; si falta se usa el `amazonUrl` del idioma), `coverStyle` (opcional: `"mockup"` por defecto para imágenes 3D con fondo blanco, o `"flat"`), `category` (`noir` | `cooking` | `kids` | `notebooks`; `kids` incluye libros infantiles y cuadernos de actividades infantiles, `notebooks` es para notebooks y sketchbooks), `collection`, `cover` (`/covers/mi-libro.jpg`) e `isNew`.
    - `translations`: una entrada por idioma (`en` y/o `es`) con `title`, `subtitle`, `description` (párrafos separados por salto de línea), `shortDescription` (opcional) y `amazonUrl`. El libro solo aparece en los idiomas donde tenga entrada.
-   - `details`: `publicationDate`, `format`, `pages`, `isbn` (y `publisher`, que por defecto es "Tavren").
+   - `series` y `seriesNumber` (opcionales): serie y posición en ella; la ficha muestra "Libro 1 de la serie …" bajo el subtítulo.
+   - `details`: `publicationDate` (AAAA-MM-DD), `pages`, `isbn`, `asin`, `dimensions` (`{ width, height }` en cm, p. ej. `15.24` y `22.86`; se muestran con coma en ES y punto en EN) y `publisher` (por defecto "Tavren"). La ficha solo muestra las filas que tengan valor.
+   - `shortDescription` (dentro de cada idioma de `translations`): texto corto de la columna derecha de la ficha; si falta se usan las dos primeras frases de `description`.
 5. Borra los libros de EJEMPLO cuando tengas los reales.
 
 Los libros que solo existen en un idioma aparecen en la otra versión bajo la pastilla "En inglés" / "Books in Spanish" y enlazan a su ficha en el idioma original.

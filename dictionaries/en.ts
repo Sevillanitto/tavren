@@ -101,12 +101,16 @@ export const en = {
     detailLabels: {
       publisher: "Publisher",
       author: "Author",
+      series: "Series",
+      dimensions: "Dimensions",
+      asin: "ASIN",
       publicationDate: "Publication date",
       formats: "Available formats",
       language: "Language",
       pages: "Pages",
       isbn: "ISBN",
     },
+    seriesLine: "Book {n} of the {series} series",
     languageNames: { en: "English", es: "Spanish" },
   },
   notFound: {

@@ -24,6 +24,9 @@ export interface BookDetails {
   format?: string;
   pages?: number;
   isbn?: string;
+  asin?: string;
+  /** Medidas en cm (ancho × alto); se formatean según el idioma. */
+  dimensions?: { width: number; height: number };
 }
 
 export type CoverStyle = "mockup" | "flat";
@@ -34,6 +37,8 @@ export interface Book {
   category: Category;
   author: string; // nombre mostrado en las tarjetas
   authorId: string; // id en data/authors.ts
+  series?: string; // p. ej. "Fractura"
+  seriesNumber?: number; // posición en la serie
   formats: BookFormat[]; // formatos disponibles
   /** Imágenes de la ficha (4). Si falta alguna en /public se usa un placeholder. */
   gallery: string[];
@@ -64,9 +69,15 @@ export const books: Book[] = [
       "/books/lo-que-enterramos-antes-de-tiempo/3.jpg",
       "/books/lo-que-enterramos-antes-de-tiempo/4.jpg",
     ],
-    amazonUrls: { ebook: "#", paperback: "#", hardcover: "#" },
+    amazonUrls: {
+      ebook: "#",
+      paperback: "https://www.amazon.es/dp/B0HPKLSSKY",
+      hardcover: "#",
+    },
     category: "noir",
     author: "André Olvera",
+    series: "Fractura",
+    seriesNumber: 1,
     formats: ["ebook", "paperback", "hardcover"],
     collection: "Narrativa Tavren",
     cover: "/covers/lo-que-enterramos-antes-de-tiempo.png",
@@ -74,17 +85,24 @@ export const books: Book[] = [
     translations: {
       es: {
         title: "Lo que enterramos antes de tiempo",
-        subtitle: "",
+        subtitle: "Un thriller",
+        shortDescription:
+          "Una novela coral de misterio con ritmo de thriller, varias líneas de tiempo y un caso que se arma pieza a pieza.",
         description:
-          "EJEMPLO. Texto ficticio de relleno: una historia de secretos familiares en un pueblo costero donde el invierno nunca termina de irse.",
+          "En Nueva York, miles de personas se cruzan cada día sin saber nada unas de otras. Comparten el mismo metro, el mismo barrio, a veces la misma pared. Cada una con su historia, sus secretos y algo que no le ha contado a nadie.\n" +
+          "Un guionista que necesita entender lo ocurrido. Un cocinero que nunca habla de su pasado. Una inspectora que no ha podido cerrar un caso. Un detective que oculta más de lo que dice.\n" +
+          "En noviembre de 2018, unas muertes en Queens los ponen en el mismo camino. A veces las historias no se cruzan por casualidad. Ninguno sabe todavía qué los une, y cuando lo descubran, nada de lo que creían saber seguirá en pie.\n" +
+          "Una novela coral de misterio con ritmo de thriller, varias líneas de tiempo y un caso que se arma pieza a pieza.",
         amazonUrl: "#",
       },
     },
     details: {
-      publicationDate: "2025-01-15",
-      format: "Tapa blanda",
-      pages: 312,
-      isbn: "000-0-00-000000-0",
+      publisher: "Tavren",
+      publicationDate: "2026-10-27",
+      pages: 368,
+      isbn: "979-8165629990",
+      asin: "B0HPKLSSKY",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
   {
@@ -198,6 +216,8 @@ export interface LocalizedBook extends BookTranslation {
   category: Category;
   author: string;
   authorId: string;
+  series?: string;
+  seriesNumber?: number;
   formats: BookFormat[];
   gallery: string[];
   amazonUrls?: Partial<Record<BookFormat, string>>;
@@ -217,6 +237,8 @@ function localize(book: Book, lang: Lang): LocalizedBook | null {
     category: book.category,
     author: book.author,
     authorId: book.authorId,
+    series: book.series,
+    seriesNumber: book.seriesNumber,
     formats: book.formats,
     gallery: book.gallery,
     amazonUrls: book.amazonUrls,
