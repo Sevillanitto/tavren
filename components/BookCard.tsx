@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { Lang } from "@/lib/i18n";
 
 export interface CardBook {
   slug: string;
@@ -7,33 +6,35 @@ export interface CardBook {
   collection: string;
   cover: string;
   isNew: boolean;
+  href: string;
+  /** Solo para libros del otro idioma: "EN" / "ES". */
+  langTag?: string;
 }
 
 export default function BookCard({
   book,
-  lang,
   newLabel,
   coverOf,
 }: {
   book: CardBook;
-  lang: Lang;
   newLabel: string;
   coverOf: string;
 }) {
   return (
     <Link
-      href={`/${lang}/books/${book.slug}`}
-      className="group relative flex h-full flex-col items-center rounded-3xl border border-sky bg-mist p-6 pt-10 shadow-card transition duration-200 hover:-translate-y-1.5 hover:shadow-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+      href={book.href}
+      hrefLang={book.langTag?.toLowerCase()}
+      className="group relative flex h-full flex-col items-center border border-line bg-mist p-8 pt-12 transition-colors duration-150 hover:border-ink/40"
     >
       {book.isNew && (
-        <span className="absolute left-5 top-5 rounded-full bg-sky-strong px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink">
+        <span className="absolute left-5 top-5 border border-sky-strong px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.15em] text-ink/70">
           {newLabel}
         </span>
       )}
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
-        className="absolute right-5 top-5 h-6 w-6 text-ink/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+        className="absolute right-5 top-5 h-5 w-5 text-ink/60"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -50,13 +51,20 @@ export default function BookCard({
         width={300}
         height={450}
         loading="lazy"
-        className="mt-4 aspect-[2/3] w-40 rounded-md object-cover shadow-cover sm:w-44"
+        className="mt-4 aspect-[2/3] w-44 object-cover shadow-cover sm:w-48"
       />
-      <div className="mt-6 text-center">
+      <div className="mt-8 text-center">
         <h3 className="font-serif text-xl font-semibold leading-snug">
           {book.title}
         </h3>
-        <p className="mt-1 text-sm text-ink/75">{book.collection}</p>
+        <p className="mt-1 text-xs text-ink/70">
+          {book.collection}
+          {book.langTag && (
+            <span className="ml-2 text-[10px] uppercase tracking-[0.15em] text-ink/50">
+              · {book.langTag}
+            </span>
+          )}
+        </p>
       </div>
     </Link>
   );

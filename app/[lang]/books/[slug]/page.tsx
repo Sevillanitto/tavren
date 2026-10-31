@@ -64,7 +64,7 @@ export default async function BookPage({
         alt={`${dict.book.coverOf} ${book.title}`}
         width={300}
         height={450}
-        className="mx-auto mt-10 aspect-[2/3] w-56 rounded-md object-cover shadow-cover"
+        className="mx-auto mt-10 aspect-[2/3] w-56 object-cover shadow-cover"
       />
       <h1 className="mt-10 font-serif text-4xl font-semibold leading-tight md:text-5xl">
         {book.title}
@@ -76,7 +76,7 @@ export default async function BookPage({
         href={book.amazonUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-10 inline-block rounded-full bg-ink px-10 py-4 text-lg font-semibold text-white transition-opacity hover:opacity-90"
+        className="mt-10 inline-block rounded-sm bg-ink px-10 py-4 text-lg font-semibold text-white transition-opacity hover:opacity-90"
       >
         {dict.book.buy}
       </a>

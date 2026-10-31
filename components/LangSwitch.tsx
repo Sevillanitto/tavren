@@ -34,7 +34,7 @@ export default function LangSwitch({
     <div
       role="group"
       aria-label={dict.langSwitch.label}
-      className="inline-flex rounded-full border-2 border-sky bg-white p-1 text-base font-semibold"
+      className="inline-flex rounded-sm border border-ink/40 bg-white p-0.5 text-base font-semibold"
     >
       {LANGS.slice()
         .sort((a, b) => (a === "es" ? -1 : b === "es" ? 1 : 0))
@@ -49,8 +49,8 @@ export default function LangSwitch({
               aria-current={active ? "true" : undefined}
               aria-label={dict.langSwitch[code]}
               onClick={() => setLangCookie(code)}
-              className={`rounded-full px-4 py-1.5 uppercase tracking-wide transition-colors ${
-                active ? "bg-sky text-ink" : "text-ink/70 hover:bg-mist"
+              className={`rounded-sm px-4 py-1.5 uppercase tracking-wide transition-colors ${
+                active ? "bg-ink text-white" : "text-ink/70 hover:bg-mist"
               }`}
             >
               {code}

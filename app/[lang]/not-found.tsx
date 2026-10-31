@@ -15,7 +15,7 @@ export default function NotFound() {
       <p className="mt-4 text-lg">{dict.notFound.body}</p>
       <Link
         href={`/${lang}`}
-        className="mt-8 inline-block rounded-full bg-ink px-8 py-3 font-semibold text-white"
+        className="mt-8 inline-block rounded-sm bg-ink px-8 py-3 font-semibold text-white"
       >
         {dict.notFound.home}
       </Link>

@@ -18,7 +18,7 @@ export const en = {
   },
   hero: {
     tagline:
-      "Tavren is an independent publisher of novels, cookbooks, children's books and notebooks. Our books are sold on Amazon.",
+      "Explore our books, get lost in a good story and discover reads that enrich every day. A catalogue that grows slowly, made with care.",
     quotes: [
       {
         text: "A reader lives a thousand lives before he dies. The man who never reads lives only one.",
@@ -55,6 +55,7 @@ export const en = {
     filterLabel: "Filter books by category",
     new: "New",
     empty: "No books in this category yet.",
+    otherLang: "Books in Spanish",
     categories: {
       all: "All",
       novel: "Fiction",
@@ -66,8 +67,8 @@ export const en = {
   about: {
     title: "About Tavren",
     body: [
-      "Tavren is a small independent publishing house. We make books we would like to find on our own shelves: stories worth getting lost in, recipes worth sharing, picture books for curious kids and notebooks for ideas that deserve a good page.",
-      "We publish in English and Spanish, and every title is available exclusively on Amazon.",
+      "Tavren is a small publishing house with a simple idea: make books worth keeping, and take the time to do it well.",
+      "We publish in English and Spanish, one title at a time. Take a look around and see what catches your eye.",
     ],
   },
   contact: {

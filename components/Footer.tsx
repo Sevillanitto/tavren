@@ -11,8 +11,8 @@ export default function Footer({
 }) {
   const other = otherLang(lang);
   return (
-    <footer className="border-t border-sky/60 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-8 text-sm sm:flex-row md:px-8">
+    <footer className="border-t border-line bg-white">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-8 text-sm sm:flex-row md:px-8">
         <p>
           © {new Date().getFullYear()} Tavren. {dict.footer.rights}
         </p>

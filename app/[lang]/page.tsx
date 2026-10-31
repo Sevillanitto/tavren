@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
-import { getBooks } from "@/data/books";
+import { getBooks, type LocalizedBook } from "@/data/books";
 import { resolveCover } from "@/lib/covers";
-import { isLang } from "@/lib/i18n";
+import { isLang, otherLang, type Lang } from "@/lib/i18n";
 import Hero from "@/components/Hero";
 import Catalog from "@/components/Catalog";
 
@@ -15,14 +15,27 @@ export default async function HomePage({
   if (!isLang(lang)) notFound();
   const dict = getDictionary(lang);
 
-  const books = getBooks(lang).map((b) => ({
+  const other = otherLang(lang);
+  const toCard = (b: LocalizedBook, bookLang: Lang, group: "own" | "other") => ({
     slug: b.slug,
     title: b.title,
     collection: b.collection,
     category: b.category,
     isNew: b.isNew,
     cover: resolveCover(b.cover),
-  }));
+    href: `/${bookLang}/books/${b.slug}`,
+    langTag: group === "other" ? bookLang.toUpperCase() : undefined,
+    group,
+  });
+  const ownBooks = getBooks(lang);
+  const ownSlugs = new Set(ownBooks.map((b) => b.slug));
+  const books = [
+    ...ownBooks.map((b) => toCard(b, lang, "own")),
+    // Libros que solo existen en el otro idioma.
+    ...getBooks(other)
+      .filter((b) => !ownSlugs.has(b.slug))
+      .map((b) => toCard(b, other, "other")),
+  ];
 
   return (
     <>

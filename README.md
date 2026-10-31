@@ -21,6 +21,8 @@ Comprobar el build de producción: `npm run build && npm start`.
    - `details`: `publicationDate`, `format`, `pages`, `isbn` (y `publisher`, que por defecto es "Tavren").
 3. Borra los 4 libros de EJEMPLO cuando tengas los reales.
 
+Los libros que solo existen en un idioma aparecen en la otra versión bajo la pastilla "En inglés" / "Books in Spanish" y enlazan a su ficha en el idioma original.
+
 Los textos de interfaz y las citas están en `dictionaries/en.ts` y `dictionaries/es.ts`. Los colores de marca, en `tailwind.config.ts`.
 
 ## Desplegar en Vercel

@@ -20,7 +20,7 @@ export const es: Dictionary = {
   },
   hero: {
     tagline:
-      "Tavren es una editorial independiente de novela, cocina, libros infantiles y cuadernos. Nuestros libros se venden en Amazon.",
+      "Explora nuestros libros, déjate llevar por una buena historia y descubre lecturas que enriquecen cada día. Un catálogo que crece poco a poco, hecho con cuidado.",
     quotes: [
       {
         text: "Un lector vive mil vidas antes de morir. El hombre que nunca lee vive solo una.",
@@ -57,6 +57,7 @@ export const es: Dictionary = {
     filterLabel: "Filtrar libros por categoría",
     new: "Nuevo",
     empty: "Todavía no hay libros en esta categoría.",
+    otherLang: "En inglés",
     categories: {
       all: "Todos",
       novel: "Novela",
@@ -68,8 +69,8 @@ export const es: Dictionary = {
   about: {
     title: "Sobre Tavren",
     body: [
-      "Tavren es una pequeña editorial independiente. Hacemos los libros que nos gustaría encontrar en nuestras propias estanterías: historias en las que perderse, recetas para compartir, álbumes para niños curiosos y cuadernos para ideas que merecen una buena página.",
-      "Publicamos en español e inglés, y todos nuestros títulos se venden en exclusiva en Amazon.",
+      "Tavren es una pequeña editorial con una idea sencilla: hacer libros que merezca la pena conservar y tomarse el tiempo de hacerlos bien.",
+      "Publicamos en español y en inglés, un título cada vez. Echa un vistazo y mira qué te llama la atención.",
     ],
   },
   contact: {
