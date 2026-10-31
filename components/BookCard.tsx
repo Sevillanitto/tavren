@@ -9,7 +9,15 @@ const CATEGORY_STYLE: Record<Category, string> = {
   notebooks: "border border-pill text-ink",
 };
 
+// Mockup: sombra incluida en la imagen, el blanco se funde con el fondo.
+// Flat: portada plana con sombra suave.
+const COVER_STYLE = {
+  mockup: "mix-blend-multiply",
+  flat: "shadow-cover",
+} as const;
+
 export interface CardBook {
+  coverStyle: keyof typeof COVER_STYLE;
   slug: string;
   title: string;
   author: string;
@@ -39,7 +47,7 @@ export default function BookCard({
     <Link
       href={book.href}
       hrefLang={book.langTag?.toLowerCase()}
-      className="group relative flex h-full flex-col items-center border border-line bg-mist p-8 pt-12 transition-colors duration-150 hover:border-ink/40"
+      className="group relative flex h-full flex-col items-center border border-line bg-mist p-5 pt-12 transition-colors duration-150 hover:border-ink/40"
     >
       <span
         className={`absolute left-5 top-5 rounded-sm px-2 py-1 text-[11px] font-medium uppercase leading-none tracking-[0.15em] ${CATEGORY_STYLE[book.category]}`}
@@ -64,16 +72,19 @@ export default function BookCard({
         <path d="M7 17 17 7M8 7h9v9" />
       </svg>
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={book.cover}
-        alt={`${coverOf} ${book.title}`}
-        width={300}
-        height={450}
-        loading="lazy"
-        className="mt-4 aspect-[2/3] w-44 object-cover shadow-cover sm:w-48"
-      />
-      <div className="mt-8 text-center">
+      {/* Zona de imagen de altura fija (4/5) con la portada centrada. */}
+      <div className="mt-2 flex aspect-[4/5] w-full items-center justify-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={book.cover}
+          alt={`${coverOf} ${book.title}`}
+          width={300}
+          height={450}
+          loading="lazy"
+          className={`h-auto max-h-full w-auto max-w-full object-contain ${COVER_STYLE[book.coverStyle]}`}
+        />
+      </div>
+      <div className="mt-6 text-center">
         <h3 className="font-serif text-xl font-semibold leading-snug">
           {book.title}
         </h3>

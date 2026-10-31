@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import { getBooks, type LocalizedBook } from "@/data/books";
-import { resolveCover } from "@/lib/covers";
+import { PLACEHOLDER_COVER, resolveCover } from "@/lib/covers";
 import { isLang, otherLang, type Lang } from "@/lib/i18n";
 import Hero from "@/components/Hero";
 import Catalog from "@/components/Catalog";
@@ -24,6 +24,9 @@ export default async function HomePage({
     category: b.category,
     isNew: b.isNew,
     cover: resolveCover(b.cover),
+    // El placeholder es una imagen plana: no se funde con multiply.
+    coverStyle:
+      resolveCover(b.cover) === PLACEHOLDER_COVER ? "flat" : b.coverStyle,
     href: `/${bookLang}/books/${b.slug}`,
     langTag: group === "other" ? bookLang.toUpperCase() : undefined,
     group,

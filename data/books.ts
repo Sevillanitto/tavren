@@ -24,6 +24,7 @@ export interface BookDetails {
   isbn: string;
 }
 
+export type CoverStyle = "mockup" | "flat";
 export type BookFormat = "ebook" | "paperback" | "hardcover";
 
 export interface Book {
@@ -33,6 +34,8 @@ export interface Book {
   formats: BookFormat[]; // formatos disponibles
   collection: string; // texto libre
   cover: string; // ruta bajo /public, p. ej. "/covers/mi-libro.jpg"
+  /** "mockup": imagen 3D con fondo blanco que flota (multiply); "flat": portada plana con sombra. Por defecto "mockup". */
+  coverStyle?: CoverStyle;
   isNew: boolean;
   /** Un libro solo aparece en los idiomas en los que tiene entrada aquí. */
   translations: Partial<Record<Lang, BookTranslation>>;
@@ -159,6 +162,7 @@ export interface LocalizedBook extends BookTranslation {
   category: Category;
   author: string;
   formats: BookFormat[];
+  coverStyle: CoverStyle;
   collection: string;
   cover: string;
   isNew: boolean;
@@ -174,6 +178,7 @@ function localize(book: Book, lang: Lang): LocalizedBook | null {
     category: book.category,
     author: book.author,
     formats: book.formats,
+    coverStyle: book.coverStyle ?? "mockup",
     collection: book.collection,
     cover: book.cover,
     isNew: book.isNew,
