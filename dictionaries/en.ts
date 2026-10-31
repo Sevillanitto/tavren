@@ -58,7 +58,7 @@ export const en = {
     otherLang: "Books in Spanish",
     categories: {
       all: "All",
-      novel: "Fiction",
+      noir: "Noir",
       cooking: "Cooking",
       kids: "Kids",
       notebooks: "Notebooks",

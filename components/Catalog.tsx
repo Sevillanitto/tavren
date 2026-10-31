@@ -13,7 +13,7 @@ type CatalogBook = CardBook & {
 };
 type Filter = "all" | Category;
 
-const ORDER: Category[] = ["novel", "cooking", "kids", "notebooks"];
+const ORDER: Category[] = ["noir", "cooking", "kids", "notebooks"];
 
 export default function Catalog({
   books,

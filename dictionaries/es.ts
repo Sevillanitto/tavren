@@ -60,7 +60,7 @@ export const es: Dictionary = {
     otherLang: "En inglés",
     categories: {
       all: "Todos",
-      novel: "Novela",
+      noir: "Novela negra",
       cooking: "Cocina",
       kids: "Infantil",
       notebooks: "Cuadernos",

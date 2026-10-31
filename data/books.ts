@@ -1,6 +1,13 @@
 import type { Lang } from "@/lib/i18n";
 
-export type Category = "novel" | "cooking" | "kids" | "notebooks";
+/*
+ * Qué va en cada categoría:
+ * - noir: novela negra
+ * - cooking: libros de cocina
+ * - kids: libros infantiles y cuadernos de actividades infantiles
+ * - notebooks: notebooks y sketchbooks
+ */
+export type Category = "noir" | "cooking" | "kids" | "notebooks";
 
 export interface BookTranslation {
   title: string;
@@ -36,7 +43,7 @@ export const books: Book[] = [
   {
     // EJEMPLO — novela solo en español
     slug: "ejemplo-la-casa-del-faro",
-    category: "novel",
+    category: "noir",
     collection: "Narrativa Tavren",
     cover: "/covers/ejemplo-la-casa-del-faro.jpg",
     isNew: true,

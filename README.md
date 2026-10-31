@@ -16,7 +16,7 @@ Comprobar el build de producción: `npm run build && npm start`.
 
 1. Copia la portada a `public/covers/` (por ejemplo `public/covers/mi-libro.jpg`, proporción 2:3). Si el archivo no existe se muestra un placeholder.
 2. Edita `data/books.ts` y añade un objeto al array `books`:
-   - `slug`, `category` (`novel` | `cooking` | `kids` | `notebooks`), `collection`, `cover` (`/covers/mi-libro.jpg`) e `isNew`.
+   - `slug`, `category` (`noir` | `cooking` | `kids` | `notebooks`; `kids` incluye libros infantiles y cuadernos de actividades infantiles, `notebooks` es para notebooks y sketchbooks), `collection`, `cover` (`/covers/mi-libro.jpg`) e `isNew`.
    - `translations`: una entrada por idioma (`en` y/o `es`) con `title`, `subtitle`, `description` y `amazonUrl`. El libro solo aparece en los idiomas donde tenga entrada.
    - `details`: `publicationDate`, `format`, `pages`, `isbn` (y `publisher`, que por defecto es "Tavren").
 3. Borra los 4 libros de EJEMPLO cuando tengas los reales.
