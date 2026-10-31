@@ -13,15 +13,17 @@ export interface BookTranslation {
   title: string;
   subtitle: string;
   description: string;
+  /** Opcional; si falta se usan las dos primeras frases de description. */
+  shortDescription?: string;
   amazonUrl: string;
 }
 
 export interface BookDetails {
   publisher?: string; // por defecto "Tavren"
-  publicationDate: string; // ISO: AAAA-MM-DD
-  format: string;
-  pages: number;
-  isbn: string;
+  publicationDate?: string; // ISO: AAAA-MM-DD
+  format?: string;
+  pages?: number;
+  isbn?: string;
 }
 
 export type CoverStyle = "mockup" | "flat";
@@ -30,8 +32,13 @@ export type BookFormat = "ebook" | "paperback" | "hardcover";
 export interface Book {
   slug: string;
   category: Category;
-  author: string;
+  author: string; // nombre mostrado en las tarjetas
+  authorId: string; // id en data/authors.ts
   formats: BookFormat[]; // formatos disponibles
+  /** Imágenes de la ficha (4). Si falta alguna en /public se usa un placeholder. */
+  gallery: string[];
+  /** Enlace de Amazon por formato; si falta, se usa amazonUrl del idioma. */
+  amazonUrls?: Partial<Record<BookFormat, string>>;
   collection: string; // texto libre
   cover: string; // ruta bajo /public, p. ej. "/covers/mi-libro.jpg"
   /** "mockup": imagen 3D con fondo blanco que flota (multiply); "flat": portada plana con sombra. Por defecto "mockup". */
@@ -50,6 +57,14 @@ export const books: Book[] = [
   {
     // Libro real (solo en español). Descripción y detalles: pendientes de rellenar.
     slug: "lo-que-enterramos-antes-de-tiempo",
+    authorId: "andre-olvera",
+    gallery: [
+      "/books/lo-que-enterramos-antes-de-tiempo/1.jpg",
+      "/books/lo-que-enterramos-antes-de-tiempo/2.jpg",
+      "/books/lo-que-enterramos-antes-de-tiempo/3.jpg",
+      "/books/lo-que-enterramos-antes-de-tiempo/4.jpg",
+    ],
+    amazonUrls: { ebook: "#", paperback: "#", hardcover: "#" },
     category: "noir",
     author: "André Olvera",
     formats: ["ebook", "paperback", "hardcover"],
@@ -75,6 +90,13 @@ export const books: Book[] = [
   {
     // EJEMPLO — libro de cocina solo en inglés
     slug: "example-sunday-table",
+    authorId: "andre-olvera",
+    gallery: [
+      "/books/example-sunday-table/1.jpg",
+      "/books/example-sunday-table/2.jpg",
+      "/books/example-sunday-table/3.jpg",
+      "/books/example-sunday-table/4.jpg",
+    ],
     category: "cooking",
     author: "André Olvera",
     formats: ["paperback"],
@@ -100,6 +122,13 @@ export const books: Book[] = [
   {
     // EJEMPLO — infantil en ambos idiomas
     slug: "ejemplo-el-zorro-y-la-luna",
+    authorId: "andre-olvera",
+    gallery: [
+      "/books/ejemplo-el-zorro-y-la-luna/1.jpg",
+      "/books/ejemplo-el-zorro-y-la-luna/2.jpg",
+      "/books/ejemplo-el-zorro-y-la-luna/3.jpg",
+      "/books/ejemplo-el-zorro-y-la-luna/4.jpg",
+    ],
     category: "kids",
     author: "André Olvera",
     formats: ["paperback"],
@@ -132,6 +161,13 @@ export const books: Book[] = [
   {
     // EJEMPLO — cuaderno solo en inglés
     slug: "example-blank-pages",
+    authorId: "andre-olvera",
+    gallery: [
+      "/books/example-blank-pages/1.jpg",
+      "/books/example-blank-pages/2.jpg",
+      "/books/example-blank-pages/3.jpg",
+      "/books/example-blank-pages/4.jpg",
+    ],
     category: "notebooks",
     author: "André Olvera",
     formats: ["paperback"],
@@ -161,7 +197,10 @@ export interface LocalizedBook extends BookTranslation {
   slug: string;
   category: Category;
   author: string;
+  authorId: string;
   formats: BookFormat[];
+  gallery: string[];
+  amazonUrls?: Partial<Record<BookFormat, string>>;
   coverStyle: CoverStyle;
   collection: string;
   cover: string;
@@ -177,7 +216,10 @@ function localize(book: Book, lang: Lang): LocalizedBook | null {
     slug: book.slug,
     category: book.category,
     author: book.author,
+    authorId: book.authorId,
     formats: book.formats,
+    gallery: book.gallery,
+    amazonUrls: book.amazonUrls,
     coverStyle: book.coverStyle ?? "mockup",
     collection: book.collection,
     cover: book.cover,

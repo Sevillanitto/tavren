@@ -2,9 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
-import { books, getBook } from "@/data/books";
+import { books, getBook, type LocalizedBook } from "@/data/books";
+import { getAuthor } from "@/data/authors";
 import { resolveCover } from "@/lib/covers";
+import { resolveGallery } from "@/lib/gallery";
 import { LANGS, isLang } from "@/lib/i18n";
+import Gallery from "@/components/Gallery";
+import BuyBox from "@/components/BuyBox";
+import Accordion from "@/components/Accordion";
+
+/** Descripción corta: shortDescription o las dos primeras frases. */
+function shortDescription(book: LocalizedBook): string {
+  if (book.shortDescription) return book.shortDescription;
+  return book.description
+    .split(/(?<=[.!?])\s+/)
+    .slice(0, 2)
+    .join(" ");
+}
 
 export const dynamicParams = false;
 
@@ -33,9 +47,18 @@ export async function generateMetadata({
     ]),
   );
   return {
-    title: book.title,
-    description: book.subtitle,
-    alternates: { canonical: `/${lang}/books/${slug}`, languages },
+    title: { absolute: `${book.title} — ${book.author} | Tavren` },
+    description: shortDescription(book),
+    alternates: {
+      canonical: `/${lang}/books/${slug}`,
+      // hreflang solo si el libro existe en los dos idiomas.
+      ...(Object.keys(languages).length > 1 ? { languages } : {}),
+    },
+    openGraph: {
+      title: `${book.title} — ${book.author}`,
+      description: shortDescription(book),
+      images: [{ url: resolveCover(book.cover) }],
+    },
   };
 }
 
@@ -50,40 +73,122 @@ export default async function BookPage({
   if (!book) notFound();
   const dict = getDictionary(lang);
 
+  const t = dict.book;
+  const author = getAuthor(book.authorId);
+  const authorBio = author?.bio[lang] ?? "";
+  const formatLabels = dict.catalog.formats;
+
+  // Galería: la existencia de cada imagen se comprueba aquí, en el servidor.
+  const total = book.gallery.length;
+  const gallery = resolveGallery(book.gallery).map((img, i) => ({
+    src: img.src,
+    alt:
+      i === 0
+        ? `${t.coverOf} ${book.title}`
+        : t.viewOf.replace("{n}", String(i + 1)).replace("{total}", String(total)),
+    thumbAlt:
+      i === 0
+        ? `${t.coverOf} ${book.title}`
+        : t.viewOf.replace("{n}", String(i + 1)).replace("{total}", String(total)),
+  }));
+
+  const date = book.details.publicationDate
+    ? new Intl.DateTimeFormat(lang, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(book.details.publicationDate))
+    : "";
+  // Solo se muestran las filas que tengan valor.
+  const rows = [
+    { label: t.detailLabels.publisher, value: book.details.publisher },
+    { label: t.detailLabels.author, value: book.author },
+    { label: t.detailLabels.publicationDate, value: date },
+    {
+      label: t.detailLabels.formats,
+      value: book.formats.map((f) => formatLabels[f]).join(" · "),
+    },
+    { label: t.detailLabels.language, value: t.languageNames[lang] },
+    {
+      label: t.detailLabels.pages,
+      value: book.details.pages ? String(book.details.pages) : "",
+    },
+    { label: t.detailLabels.isbn, value: book.details.isbn ?? "" },
+  ].filter((r) => r.value);
+
   return (
-    <article className="mx-auto max-w-3xl px-5 py-12 text-center md:px-8 md:py-20">
+    <article className="mx-auto max-w-[1280px] px-5 py-8 md:px-8 md:py-12">
       <Link
         href={`/${lang}#books`}
-        className="text-sm font-medium underline decoration-sky decoration-2 underline-offset-4"
+        className="rounded-sm text-sm text-ink/75 hover:text-ink"
       >
-        {dict.book.back}
+        {t.back}
       </Link>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={resolveCover(book.cover)}
-        alt={`${dict.book.coverOf} ${book.title}`}
-        width={300}
-        height={450}
-        className="mx-auto mt-10 aspect-[2/3] w-56 object-cover shadow-cover"
-      />
-      <h1 className="mt-10 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-        {book.title}
-      </h1>
-      <p className="mt-3 text-lg text-ink/75">{book.author}</p>
-      <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ink/70">
-        {book.formats.map((f) => dict.catalog.formats[f]).join(" · ")}
-      </p>
-      <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/85">
-        {book.description}
-      </p>
-      <a
-        href={book.amazonUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-10 inline-block rounded-sm bg-ink px-10 py-4 text-lg font-semibold text-white transition-opacity hover:opacity-90"
-      >
-        {dict.book.buy}
-      </a>
+
+      <div className="mt-8 grid gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
+        <Gallery
+          images={gallery}
+          label={t.galleryLabel}
+          showViewLabel={t.showView}
+        />
+
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-ink/70">
+            {book.author}
+          </p>
+          <h1 className="mt-3 font-serif text-3xl uppercase leading-tight tracking-[0.12em] md:text-4xl">
+            {book.title}
+          </h1>
+          {book.subtitle && (
+            <p className="mt-3 text-xs uppercase tracking-[0.18em] text-ink/70">
+              {book.subtitle}
+            </p>
+          )}
+          <hr className="my-6 border-line" />
+          <p className="leading-relaxed text-ink/85">{shortDescription(book)}</p>
+          <hr className="my-6 border-line" />
+          <BuyBox
+            formats={book.formats}
+            labels={formatLabels}
+            urls={book.amazonUrls}
+            fallbackUrl={book.amazonUrl}
+            formatLabel={t.formatLabel}
+            buyLabel={t.buy}
+            noteLabel={t.opensOnAmazon}
+          />
+        </div>
+      </div>
+
+      <div className="mt-14 border-t border-line">
+        <Accordion title={t.sections.description} defaultOpen>
+          <div className="max-w-3xl space-y-4 leading-relaxed text-ink/85">
+            {book.description.split("\n").map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </Accordion>
+        <Accordion title={t.sections.details}>
+          <dl className="max-w-3xl">
+            {rows.map((r) => (
+              <div
+                key={r.label}
+                className="grid grid-cols-[1fr_2fr] gap-4 border-b border-line py-3 last:border-b-0"
+              >
+                <dt className="text-xs uppercase tracking-[0.15em] text-ink/70">
+                  {r.label}
+                </dt>
+                <dd>{r.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Accordion>
+        {authorBio && (
+          <Accordion title={t.sections.author}>
+            <p className="max-w-3xl leading-relaxed text-ink/85">{authorBio}</p>
+          </Accordion>
+        )}
+      </div>
     </article>
   );
 }
