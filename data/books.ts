@@ -474,6 +474,132 @@ export const books: Book[] = [
       dimensions: { width: 21.59, height: 27.94 }, // cm
     },
   },
+  {
+    slug: "unicorn-dreams-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Unicorn Dreams sketchbook/1.png",
+      "/books/Unicorn Dreams sketchbook/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D7P5JJ51",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Unicorn Dreams sketchbook/Unicorn Dreams sketchbook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Unicorn Dreams: Enchanted Sketchbook",
+        subtitle: "Enchanted sketchbook for kids",
+        shortDescription:
+          "A unicorn-themed sketchbook with premium blank pages for drawing, coloring and sketching. Ideal for ages 3 and up.",
+        description: "Let your child's imagination soar. Specially designed for young artists and unicorn lovers, this sketchbook offers premium blank pages perfect for drawing, coloring and sketching. The vibrant unicorn-themed cover captures the wonder and enchantment, inviting children to explore their creativity.\nIdeal for a variety of artistic activities, from sketching to painting, and for encouraging creativity and artistic expression. An ideal size of 8.5 x 11 inches, perfect for use at home or on the go. High-quality paper suitable for colored pencils, crayons, very light fine-tip markers and watercolor paints. An enchanting unicorn-themed cover that inspires imaginative adventures and makes art time magical.\nWhether your child is a budding artist or simply loves unicorns, it is the perfect companion for hours of creative fun. The durable cover and high-quality paper are made to withstand all their artistic endeavors, making it a great gift for birthdays, holidays or any special occasion.\nPerfect for daily drawing and doodling, art classes and projects, birthday and holiday gifts, and creativity on the go. A fun, mess-free way to inspire artistic expression and imagination.",
+        amazonUrl: "https://www.amazon.com/dp/B0D7P5JJ51",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo encantado para niños",
+        shortDescription:
+          "Un cuaderno de dibujo con portada de unicornios y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. Ideal a partir de 3 años.",
+        description: "Deja volar la imaginación de tu hijo. Pensado especialmente para jóvenes artistas y amantes de los unicornios, este cuaderno de dibujo ofrece páginas en blanco de calidad, perfectas para dibujar, colorear y hacer bocetos. La vibrante portada de unicornios captura la magia y el encanto, e invita a los niños a explorar su creatividad.\nIdeal para todo tipo de actividades artísticas, del boceto a la pintura, y para fomentar la creatividad y la expresión artística. Un tamaño ideal de 8,5 x 11 pulgadas, perfecto para usar en casa o llevar a cualquier parte. Papel de calidad apto para lápices de colores, ceras, rotuladores de punta fina muy suaves y acuarelas. Una portada encantadora de unicornios que inspira aventuras imaginativas y hace que el rato de arte sea mágico.\nTanto si tu hijo es un artista en ciernes como si simplemente le encantan los unicornios, es el compañero perfecto para horas de diversión creativa. La cubierta resistente y el papel de calidad están hechos para aguantar todas sus aventuras artísticas, y lo convierten en un gran regalo para cumpleaños, fiestas o cualquier ocasión especial.\nPerfecto para dibujar y garabatear a diario, clases y proyectos de arte, regalos de cumpleaños y fiestas, y para crear sobre la marcha. Una forma divertida y sin ensuciar de inspirar la expresión artística y la imaginación.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-17",
+      pages: 118,
+      asin: "B0D7P5JJ51",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
+  {
+    slug: "space-explorers-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Space Explorers Adventures/1.png",
+      "/books/Space Explorers Adventures/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D78R8FCM",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Space Explorers Adventures/Space Explorers Adventures.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Space Explorers: Astronaut Adventures",
+        subtitle: "Sketchbook for kids",
+        shortDescription:
+          "A space-themed sketchbook with a soft matte cover and premium blank pages for drawing, coloring and sketching. For ages 3 and up.",
+        description: "Blast off into creativity. This vibrant and inspiring sketchbook is designed to ignite the imaginations of young space enthusiasts. The cover features original, colorful illustrations of astronauts and space scenes that will captivate any child's interest. Inside, premium blank pages are perfect for drawing, coloring and sketching, whether your child is practicing their art skills or just doodling for fun.\nA size of 8.5 x 11 inches, easy to carry and perfect for backpacks and bags. Premium pages ideal for colored pencils, crayons, very light fine-tip markers or watercolor paints. A durable, soft matte cover with an inspiring space-themed design that is pleasant to the touch and easy to grip. Ideal for daily journaling, drawing, doodling, sketching, taking notes and more.\nIt encourages your child to explore the wonders of space while developing their artistic skills. Perfect for children aged 3 and up who love astronauts, space and expressing their creativity, and an excellent gift for birthdays, holidays or any special occasion.",
+        amazonUrl: "https://www.amazon.com/dp/B0D78R8FCM",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo para niños",
+        shortDescription:
+          "Un cuaderno de dibujo con portada mate suave de astronautas y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. A partir de 3 años.",
+        description: "Despega hacia la creatividad. Este vibrante e inspirador cuaderno de dibujo está pensado para encender la imaginación de los pequeños aficionados al espacio. La portada tiene ilustraciones originales y coloridas de astronautas y escenas espaciales que captarán el interés de cualquier niño. Dentro, páginas en blanco de calidad, perfectas para dibujar, colorear y hacer bocetos, tanto si tu hijo practica sus habilidades artísticas como si solo garabatea por diversión.\nUn tamaño de 8,5 x 11 pulgadas, fácil de llevar y perfecto para mochilas y bolsos. Páginas de calidad ideales para lápices de colores, ceras, rotuladores de punta fina muy suaves o acuarelas. Una cubierta mate suave y resistente, con un diseño espacial inspirador, agradable al tacto y fácil de agarrar. Ideal para escribir un diario, dibujar, garabatear, hacer bocetos, tomar notas y mucho más.\nAnima a tu hijo a explorar las maravillas del espacio mientras desarrolla sus habilidades artísticas. Perfecto para niños a partir de 3 años a los que les encantan los astronautas, el espacio y expresar su creatividad, y un regalo excelente para cumpleaños, fiestas o cualquier ocasión especial.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-16",
+      pages: 118,
+      asin: "B0D78R8FCM",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
+  {
+    slug: "mermaid-magic-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Mermaid Magic Sketchbook/1.png",
+      "/books/Mermaid Magic Sketchbook/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D7P3BSVS",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Mermaid Magic Sketchbook/Mermaid Magic Sketchbook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Mermaid Magic: Enchanting Sketchbook",
+        subtitle: "Enchanting sketchbook for kids",
+        shortDescription:
+          "A mermaid-themed sketchbook with premium blank pages for drawing, coloring and sketching. Ideal for ages 3 and up.",
+        description: "Dive into an underwater adventure. Designed especially for young artists and mermaid enthusiasts, this sketchbook offers premium blank pages perfect for drawing, coloring and sketching. The vibrant mermaid-themed cover captures the imagination and invites children to explore their artistic side.\nIdeal for a variety of artistic activities, from sketching to painting, and for encouraging creativity and artistic expression. An ideal size of 8.5 x 11 inches, perfect for use at home or on the go. High-quality paper suitable for colored pencils, crayons, very light fine-tip markers and watercolor paints. A vibrant mermaid-themed cover that inspires imaginative adventures and makes art time fun.\nWhether your child is a budding artist or just loves mermaids, it is the perfect companion for hours of creative fun. The durable cover and high-quality paper are made to withstand all their artistic endeavors, making it a great gift for birthdays, holidays or any special occasion.\nPerfect for daily drawing and doodling, art classes and projects, birthday and holiday gifts, and creativity on the go. A fun, mess-free way to inspire artistic expression and imagination.",
+        amazonUrl: "https://www.amazon.com/dp/B0D7P3BSVS",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo encantador para niños",
+        shortDescription:
+          "Un cuaderno de dibujo con portada de sirenas y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. Ideal a partir de 3 años.",
+        description: "Sumérgete en una aventura submarina. Pensado especialmente para jóvenes artistas y aficionados a las sirenas, este cuaderno de dibujo ofrece páginas en blanco de calidad, perfectas para dibujar, colorear y hacer bocetos. La vibrante portada de sirenas despierta la imaginación e invita a los niños a explorar su lado artístico.\nIdeal para todo tipo de actividades artísticas, del boceto a la pintura, y para fomentar la creatividad y la expresión artística. Un tamaño ideal de 8,5 x 11 pulgadas, perfecto para usar en casa o llevar a cualquier parte. Papel de calidad apto para lápices de colores, ceras, rotuladores de punta fina muy suaves y acuarelas. Una portada vibrante de sirenas que inspira aventuras imaginativas y hace que el rato de arte sea divertido.\nTanto si tu hijo es un artista en ciernes como si simplemente le encantan las sirenas, es el compañero perfecto para horas de diversión creativa. La cubierta resistente y el papel de calidad están hechos para aguantar todas sus aventuras artísticas, y lo convierten en un gran regalo para cumpleaños, fiestas o cualquier ocasión especial.\nPerfecto para dibujar y garabatear a diario, clases y proyectos de arte, regalos de cumpleaños y fiestas, y para crear sobre la marcha. Una forma divertida y sin ensuciar de inspirar la expresión artística y la imaginación.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-17",
+      pages: 118,
+      asin: "B0D7P3BSVS",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
