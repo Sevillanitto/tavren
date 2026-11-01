@@ -5,18 +5,14 @@ import { useRef, useState } from "react";
 export interface GalleryImage {
   src: string;
   alt: string;
-  thumbAlt: string;
 }
 
 export default function Gallery({
   images,
   label,
-  showViewLabel,
 }: {
   images: GalleryImage[];
   label: string;
-  /** Plantilla con {n}: "Mostrar vista {n}". */
-  showViewLabel: string;
 }) {
   const [active, setActive] = useState(0);
   const thumbs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -53,7 +49,7 @@ export default function Gallery({
             }}
             type="button"
             aria-current={i === active ? "true" : undefined}
-            aria-label={showViewLabel.replace("{n}", String(i + 1))}
+            aria-label={`${i + 1}/${images.length}`}
             onClick={() => setActive(i)}
             className={`w-[68px] flex-none rounded-sm border p-0.5 ${
               i === active
@@ -64,7 +60,7 @@ export default function Gallery({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img.src}
-              alt={img.thumbAlt}
+              alt={img.alt}
               width={68}
               height={68}
               loading="lazy"

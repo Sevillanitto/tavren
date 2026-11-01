@@ -72,14 +72,7 @@ export default async function BookPage({
   const total = book.gallery.length;
   const gallery = resolveGallery(book.gallery).map((img, i) => ({
     src: img.src,
-    alt:
-      i === 0
-        ? `${t.coverOf} ${book.title}`
-        : t.viewOf.replace("{n}", String(i + 1)).replace("{total}", String(total)),
-    thumbAlt:
-      i === 0
-        ? `${t.coverOf} ${book.title}`
-        : t.viewOf.replace("{n}", String(i + 1)).replace("{total}", String(total)),
+    alt: `${book.title} – ${i + 1}/${total}`,
   }));
 
   const date = book.details.publicationDate
@@ -142,7 +135,6 @@ export default async function BookPage({
         <Gallery
           images={gallery}
           label={t.galleryLabel}
-          showViewLabel={t.showView}
         />
 
         <div>

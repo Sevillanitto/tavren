@@ -90,8 +90,6 @@ export const en = {
     back: "← Books",
     coverOf: "Cover of",
     galleryLabel: "Image gallery",
-    viewOf: "View {n} of {total}",
-    showView: "Show view {n}",
     formatLabel: "Format",
     sections: {
       description: "Description",

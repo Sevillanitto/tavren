@@ -15,7 +15,7 @@ Comprobar el build de producción: `npm run build && npm start`.
 ## Añadir un libro
 
 1. Copia la portada plana a `public/covers/` (por ejemplo `public/covers/mi-libro.jpg`, proporción 2:3). Si el archivo no existe se muestra un placeholder.
-2. Copia las 4 imágenes de la galería de la ficha a `public/books/<slug>/1.jpg` … `4.jpg`. Las que falten se sustituyen por un placeholder.
+2. Copia las 4 imágenes de la galería de la ficha a `public/books/<slug>/1.jpg` … `4.jpg` (o .png; la extensión debe coincidir con la ruta de `gallery`). Las que falten se sustituyen por un placeholder.
 3. Si el autor es nuevo, añádelo en `data/authors.ts` (`id`, `name` y `bio` en `es` y `en`).
 4. Edita `data/books.ts` y añade un objeto al array `books`:
    - `slug`, `authorId` (id del autor), `author` (nombre para las tarjetas), `formats`, `gallery` (las 4 rutas de `/books/<slug>/…`), `amazonUrls` (opcional: un enlace por formato; si falta se usa el `amazonUrl` del idioma), `coverStyle` (opcional: `"mockup"` por defecto para imágenes 3D con fondo blanco, o `"flat"`), `category` (`noir` | `cooking` | `kids` | `notebooks`; `kids` incluye libros infantiles y cuadernos de actividades infantiles, `notebooks` es para notebooks y sketchbooks), `collection`, `cover` (`/covers/mi-libro.jpg`) e `isNew`.

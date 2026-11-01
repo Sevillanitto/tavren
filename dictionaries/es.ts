@@ -92,8 +92,6 @@ export const es: Dictionary = {
     back: "← Libros",
     coverOf: "Portada de",
     galleryLabel: "Galería de imágenes",
-    viewOf: "Vista {n} de {total}",
-    showView: "Mostrar vista {n}",
     formatLabel: "Formato",
     sections: {
       description: "Descripción",

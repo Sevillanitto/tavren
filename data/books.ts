@@ -77,10 +77,10 @@ export const books: Book[] = [
     language: "es",
     authorId: "andre-olvera",
     gallery: [
-      "/books/lo-que-enterramos-antes-de-tiempo/1.jpg",
-      "/books/lo-que-enterramos-antes-de-tiempo/2.jpg",
-      "/books/lo-que-enterramos-antes-de-tiempo/3.jpg",
-      "/books/lo-que-enterramos-antes-de-tiempo/4.jpg",
+      "/books/lo-que-enterramos-antes-de-tiempo/1.png",
+      "/books/lo-que-enterramos-antes-de-tiempo/2.png",
+      "/books/lo-que-enterramos-antes-de-tiempo/3.png",
+      "/books/lo-que-enterramos-antes-de-tiempo/4.png",
     ],
     amazonUrls: {
       ebook: "#",
