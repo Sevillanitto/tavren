@@ -250,6 +250,94 @@ export const books: Book[] = [
       dimensions: { width: 19.05, height: 23.5 }, // cm
     },
   },
+  {
+    slug: "dino-fun-notebook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/dino-fun-notebook/1 (1).png",
+      "/books/dino-fun-notebook/2.png",
+      "/books/dino-fun-notebook/3.png",
+      "/books/dino-fun-notebook/4.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D77GN4WT",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/dino-fun-notebook/dino-fun-notebook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Dino Fun Composition Notebook",
+        subtitle: "Notebook with original dino art",
+        shortDescription:
+          "A vibrant dinosaur-themed composition notebook with original art, 100 pages and premium paper. Great for kids and teens.",
+        description: "The perfect journal for kids and teens. The Dino Fun Composition Notebook is designed to inspire creativity and make writing and drawing a joy, with vibrant dinosaur-themed illustrations and premium-quality paper.\nA lively, original dinosaur cover that will captivate young dinosaur enthusiasts. Premium paper for a smooth writing experience, whether for schoolwork, doodling or journaling. At 7.5 x 9.25 inches, it is large enough to provide ample writing space yet compact enough to carry anywhere. Inside, charming dinosaur drawings spark imagination, and the sturdy cover and strong binding are built to last through the school year and beyond.\nIdeal for school and homework, with wide-ruled pages; for creative writing and journaling; for drawing and doodling; and as a thoughtful gift for birthdays, holidays or back-to-school.\nMore than a notebook, it is a companion for their learning journey, packed with delightful dinosaur illustrations that make writing tasks enjoyable and engaging.",
+        amazonUrl: "https://www.amazon.com/dp/B0D77GN4WT",
+      },
+      es: {
+        subtitle: "Cuaderno con ilustraciones originales de dinosaurios",
+        shortDescription:
+          "Un cuaderno de composición con portada vibrante de dinosaurios, ilustraciones originales, 100 páginas y papel de calidad. Genial para niños y adolescentes.",
+        description: "El cuaderno perfecto para niños y adolescentes. El Dino Fun Composition Notebook está pensado para inspirar la creatividad y hacer que escribir y dibujar sea un placer, con vibrantes ilustraciones de dinosaurios y papel de calidad.\nUna portada original y llena de vida que cautivará a los pequeños aficionados a los dinosaurios. Papel de calidad para una escritura suave, ya sea para los deberes, para garabatear o para escribir un diario. Con 7,5 x 9,25 pulgadas, es lo bastante grande para escribir con holgura y lo bastante compacto para llevarlo a cualquier parte. Dentro, encantadores dibujos de dinosaurios despiertan la imaginación, y la cubierta resistente y la encuadernación sólida aguantan todo el curso y más allá.\nIdeal para el colegio y los deberes, con páginas de rayas anchas; para la escritura creativa y los diarios; para dibujar y garabatear; y como regalo para cumpleaños, fiestas o la vuelta al cole.\nMás que un cuaderno, es un compañero en su camino de aprendizaje, lleno de deliciosas ilustraciones de dinosaurios que hacen que escribir sea entretenido y divertido.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-15",
+      pages: 100,
+      asin: "B0D77GN4WT",
+      dimensions: { width: 19.05, height: 23.5 }, // cm
+    },
+  },
+  {
+    slug: "unicorn-dreams-notebook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/unicorn-dreams-notebook/1.png",
+      "/books/unicorn-dreams-notebook/2.png",
+      "/books/unicorn-dreams-notebook/3.png",
+      "/books/unicorn-dreams-notebook/4.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D77R1YQZ",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/unicorn-dreams-notebook/unicorn-dreams-notebook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Unicorn Dreams Composition Notebook",
+        subtitle: "Notebook for girls with unicorn illustrations",
+        shortDescription:
+          "A unicorn-themed composition notebook with a soft matte cover, unicorn drawings on every page and premium paper. Perfect for writing, doodling and school.",
+        description: "Unleash your daughter's imagination and creativity. This unicorn-themed notebook is designed for girls and teenagers who love to express their creativity, with a vibrant cover featuring original unicorn illustrations and pages filled with charming unicorn drawings, perfect for drawing, writing and taking notes.\nComposition size (7.5 x 9.25 inches), easy to carry in a backpack or bag. Premium paper, ideal for colored pencils, crayons, watercolor paints and fine-tip markers. A soft matte cover that is pleasant to the touch and easy to grip, and unicorn-themed doodles on every page to color and inspire creativity every day.\nPerfect as a daily journal, for drawing and doodling, for taking notes, and as a gift for birthdays, Christmas, Easter, gift baskets or stocking stuffers. For girls aged 3 to 10 who enjoy writing, coloring and drawing in a fun, mess-free way.\nWhether for daily activities, school projects or leisure time, it will be their ideal companion for endless hours of creativity and entertainment.",
+        amazonUrl: "https://www.amazon.com/dp/B0D77R1YQZ",
+      },
+      es: {
+        subtitle: "Cuaderno para niñas con ilustraciones de unicornios",
+        shortDescription:
+          "Un cuaderno de composición con unicornios, cubierta mate suave, dibujos en cada página y papel de calidad. Perfecto para escribir, garabatear y el colegio.",
+        description: "Despierta la imaginación y la creatividad de tu hija. Este cuaderno de unicornios está pensado para niñas y adolescentes a las que les encanta expresar su creatividad, con una portada vibrante de ilustraciones originales de unicornios y páginas llenas de encantadores dibujos de unicornios, perfecto para dibujar, escribir y tomar notas.\nTamaño composición (7,5 x 9,25 pulgadas), fácil de llevar en la mochila o el bolso. Papel de calidad, ideal para lápices de colores, ceras, acuarelas y rotuladores de punta fina. Una cubierta mate suave al tacto y fácil de agarrar, y garabatos de unicornios en cada página para colorear y despertar la creatividad cada día.\nPerfecto como diario, para dibujar y garabatear, para tomar notas y como regalo para cumpleaños, Navidad, Pascua, cestas de regalo o detalles navideños. Para niñas de 3 a 10 años a las que les gusta escribir, colorear y dibujar de forma divertida y sin ensuciar.\nYa sea para las actividades diarias, los proyectos del cole o el tiempo libre, será su compañero ideal para horas y horas de creatividad y diversión.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-15",
+      pages: 100,
+      asin: "B0D77R1YQZ",
+      dimensions: { width: 19.05, height: 23.5 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
