@@ -83,9 +83,9 @@ export const books: Book[] = [
       "/books/lo-que-enterramos-antes-de-tiempo/4.png",
     ],
     amazonUrls: {
-      ebook: "#",
+      ebook: "https://www.amazon.es/dp/B0HPHQMXTY",
       paperback: "https://www.amazon.es/dp/B0HPKLSSKY",
-      hardcover: "#",
+      hardcover: "https://www.amazon.es/dp/B0HPZLHW5H",
     },
     category: "noir",
     author: "André Olvera",
@@ -106,7 +106,7 @@ export const books: Book[] = [
           "Un guionista que necesita entender lo ocurrido. Un cocinero que nunca habla de su pasado. Una inspectora que no ha podido cerrar un caso. Un detective que oculta más de lo que dice.\n" +
           "En noviembre de 2018, unas muertes en Queens los ponen en el mismo camino. A veces las historias no se cruzan por casualidad. Ninguno sabe todavía qué los une, y cuando lo descubran, nada de lo que creían saber seguirá en pie.\n" +
           "Una novela coral de misterio con ritmo de thriller, varias líneas de tiempo y un caso que se arma pieza a pieza.",
-        amazonUrl: "#",
+        amazonUrl: "https://www.amazon.es/dp/B0HPKLSSKY",
       },
       en: {
         subtitle: "A thriller",

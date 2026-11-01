@@ -101,7 +101,6 @@ export const en = {
       author: "Author",
       series: "Series",
       dimensions: "Dimensions",
-      asin: "ASIN",
       publicationDate: "Publication date",
       formats: "Available formats",
       language: "Language",

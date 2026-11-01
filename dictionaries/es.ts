@@ -103,7 +103,6 @@ export const es: Dictionary = {
       author: "Autor",
       series: "Serie",
       dimensions: "Dimensiones",
-      asin: "ASIN",
       publicationDate: "Fecha de publicación",
       formats: "Formatos disponibles",
       language: "Idioma",

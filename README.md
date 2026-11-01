@@ -22,7 +22,7 @@ Comprobar el build de producción: `npm run build && npm start`.
    - `language`: idioma en el que está escrito el libro (`"es"`, `"en"` o `"both"`), no el de la ficha. Decide en qué vista de la home sale: por defecto los libros del idioma de la página o `"both"`; el resto, bajo la pastilla "En inglés" / "Books in Spanish".
    - `translations`: contenido por idioma (`en` y `es`) con `title`, `subtitle`, `description` (párrafos separados por salto de línea), `shortDescription` (opcional) y `amazonUrl`. **Todos los libros tienen ficha en `/es` y `/en`**: cada libro necesita contenido en los dos idiomas, pero si falta algún campo en un idioma se usa el texto del idioma original del libro (`"both"` usa el español). El título no se traduce: si no hay `title` en el otro idioma se usa el original. Lo mismo con los enlaces de Amazon.
    - `series` y `seriesNumber` (opcionales): serie y posición en ella; la ficha muestra "Libro 1 de la serie …" bajo el subtítulo.
-   - `details`: `publicationDate` (AAAA-MM-DD), `pages`, `isbn`, `asin`, `dimensions` (`{ width, height }` en cm, p. ej. `15.24` y `22.86`; se muestran con coma en ES y punto en EN) y `publisher` (por defecto "Tavren"). La ficha solo muestra las filas que tengan valor.
+   - `details`: `publicationDate` (AAAA-MM-DD), `pages`, `isbn`, `asin` (solo informativo, no se muestra), `dimensions` (`{ width, height }` en cm, p. ej. `15.24` y `22.86`; se muestran con coma en ES y punto en EN) y `publisher` (por defecto "Tavren"). La ficha solo muestra las filas que tengan valor.
    - `shortDescription` (dentro de cada idioma de `translations`): texto corto de la columna derecha de la ficha; si falta se usan las dos primeras frases de `description`.
 5. Borra los libros de EJEMPLO cuando tengas los reales.
 

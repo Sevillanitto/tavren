@@ -119,7 +119,6 @@ export default async function BookPage({
     },
     { label: t.detailLabels.dimensions, value: dimensions },
     { label: t.detailLabels.isbn, value: book.details.isbn ?? "" },
-    { label: t.detailLabels.asin, value: book.details.asin ?? "" },
   ].filter((r) => r.value);
 
   return (
