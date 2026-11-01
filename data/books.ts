@@ -348,6 +348,132 @@ export const books: Book[] = [
       dimensions: { width: 19.05, height: 23.5 }, // cm
     },
   },
+  {
+    slug: "teddy-bear-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Teddy Bear Sketchbook/1.png",
+      "/books/Teddy Bear Sketchbook/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D7PD1T1B",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Teddy Bear Sketchbook/Teddy Bear Sketchbook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Teddy Bear Adventures Sketchbook",
+        subtitle: "Sketchbook for kids",
+        shortDescription:
+          "A teddy bear-themed sketchbook with premium blank pages for drawing, coloring and sketching. Ideal for ages 3 and up.",
+        description: "Let your child's creativity flourish. This delightful sketchbook is designed for young artists who love teddy bears and enjoy expressing their creativity through drawing and coloring, with premium blank pages perfect for sketching, doodling and creating beautiful artwork.\nPlenty of space for all kinds of artistic activities. An ideal size of 8.5 x 11 inches, perfect for home, school or on the go. High-quality paper suitable for colored pencils, crayons, very light fine-tip markers and watercolor paints. A charming teddy bear-themed cover that inspires imaginative adventures and makes art time fun.\nWhether your child is an aspiring artist or simply loves teddy bears, it is the perfect companion for hours of creative fun. The durable cover and high-quality paper are made to withstand all their artistic endeavors, making it a great gift for birthdays, holidays or any special occasion.\nPerfect for daily drawing and doodling, art classes and projects, birthday and holiday gifts, and creativity on the go. A fun, mess-free way to inspire artistic expression and imagination, ideal for ages 3 and up.",
+        amazonUrl: "https://www.amazon.com/dp/B0D7PD1T1B",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo para niños",
+        shortDescription:
+          "Un cuaderno de dibujo con portada de ositos y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. Ideal a partir de 3 años.",
+        description: "Deja que florezca la creatividad de tu hijo. Este delicioso cuaderno de dibujo está pensado para jóvenes artistas que aman los ositos y disfrutan expresándose dibujando y coloreando, con páginas en blanco de calidad perfectas para hacer bocetos, garabatear y crear obras preciosas.\nEspacio de sobra para todo tipo de actividades artísticas. Un tamaño ideal de 8,5 x 11 pulgadas, perfecto para casa, el colegio o para llevar a cualquier parte. Papel de calidad apto para lápices de colores, ceras, rotuladores de punta fina muy suaves y acuarelas. Una portada encantadora con ositos que inspira aventuras imaginativas y hace que el rato de arte sea divertido.\nTanto si tu hijo es un artista en ciernes como si simplemente le encantan los ositos, es el compañero perfecto para horas de diversión creativa. La cubierta resistente y el papel de calidad están hechos para aguantar todas sus aventuras artísticas, y lo convierten en un gran regalo para cumpleaños, fiestas o cualquier ocasión especial.\nPerfecto para dibujar y garabatear a diario, clases y proyectos de arte, regalos de cumpleaños y fiestas, y para crear sobre la marcha. Una forma divertida y sin ensuciar de inspirar la expresión artística y la imaginación, ideal a partir de 3 años.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-18",
+      pages: 118,
+      asin: "B0D7PD1T1B",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
+  {
+    slug: "jungle-animals-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Jungle Animals Sketchbook/1.png",
+      "/books/Jungle Animals Sketchbook/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D78Q28RJ",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Jungle Animals Sketchbook/jungle animals sketchbook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Jungle Animals Sketchbook",
+        subtitle: "Jungle adventure sketchbook for boys and girls",
+        shortDescription:
+          "A vibrant jungle-themed sketchbook with premium blank pages for drawing, coloring and sketching. For kids aged 3 and up.",
+        description: "Embark on an artistic adventure. This vibrant jungle-themed sketchbook is perfect for young artists. The original, colorful cover will captivate children's imaginations and inspire them to fill its premium blank pages with their amazing ideas.\nWhether drawing, painting or sketching, it is designed to let creativity soar. Ideal for colored pencils, crayons, light fine-tip markers and even watercolor paint, it provides a fantastic canvas for every budding artist. An original, eye-catching cover of jungle animals, high-quality paper suitable for various art supplies, and a size of 8.5 x 11 inches.\nThe durable cover is made to withstand all their artistic adventures, and the premium paper guarantees a smooth drawing experience every time. Perfect for school projects, home crafts or just doodling fun, for daily drawing, birthday and holiday gifts, art classes, and personal journals and keepsakes.\nMore than just a sketchbook, it is a gateway to a world of artistic possibilities, for kids aged 3 and up.",
+        amazonUrl: "https://www.amazon.com/dp/B0D78Q28RJ",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo de aventuras en la selva para niños y niñas",
+        shortDescription:
+          "Un cuaderno de dibujo con portada vibrante de animales de la selva y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. Para niños a partir de 3 años.",
+        description: "Embárcate en una aventura artística. Este vibrante cuaderno de dibujo con temática de selva es perfecto para jóvenes artistas. La portada original y colorida cautivará la imaginación de los niños y los animará a llenar sus páginas en blanco de calidad con sus ideas más geniales.\nYa sea para dibujar, pintar o hacer bocetos, está pensado para que la creatividad vuele. Ideal para lápices de colores, ceras, rotuladores de punta fina suaves e incluso acuarelas, ofrece un lienzo fantástico para cada artista en ciernes. Una portada original y llamativa con animales de la selva, papel de calidad apto para distintos materiales de arte y un tamaño de 8,5 x 11 pulgadas.\nLa cubierta resistente está hecha para aguantar todas sus aventuras artísticas, y el papel de calidad garantiza una experiencia de dibujo suave cada vez. Perfecto para proyectos del cole, manualidades en casa o simplemente para garabatear, para dibujar a diario, regalos de cumpleaños y fiestas, clases de arte, y diarios personales y recuerdos.\nMás que un simple cuaderno de dibujo, es una puerta a un mundo de posibilidades artísticas, para niños a partir de 3 años.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-16",
+      pages: 118,
+      asin: "B0D78Q28RJ",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
+  {
+    slug: "dinosaur-adventure-sketchbook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Dinosaur Adventure Sketchbook/1.png",
+      "/books/Dinosaur Adventure Sketchbook/2.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D7NYFQZJ",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Dinosaur Adventure Sketchbook/Dinosaur Adventure Sketchbook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Dinosaur Adventure Sketchbook",
+        subtitle: "Sketchbook with a vibrant dinosaur cover",
+        shortDescription:
+          "A dinosaur-themed sketchbook with premium blank pages for drawing, coloring and sketching. Ideal for ages 3 and up.",
+        description: "Embark on a dino adventure. Designed especially for young artists and dinosaur enthusiasts, this sketchbook offers premium blank pages perfect for drawing, coloring and sketching. The vibrant dinosaur-themed cover captures the imagination and invites children to explore their artistic side.\nIdeal for a variety of artistic activities, from sketching to painting, and for encouraging creativity and artistic expression. An ideal size of 8.5 x 11 inches, perfect for use at home or on the go. High-quality paper suitable for colored pencils, crayons, very light fine-tip markers and watercolor paints. A vibrant dinosaur-themed cover that inspires imaginative adventures and makes art time fun.\nWhether your child is a budding artist or just loves dinosaurs, it is the perfect companion for hours of creative fun. The durable cover and high-quality paper are made to withstand all their artistic endeavors, making it a great gift for birthdays, holidays or any special occasion.\nPerfect for daily drawing and doodling, art classes and projects, birthday and holiday gifts, and creativity on the go. A fun, mess-free way to inspire artistic expression and imagination.",
+        amazonUrl: "https://www.amazon.com/dp/B0D7NYFQZJ",
+      },
+      es: {
+        subtitle: "Cuaderno de dibujo con portada vibrante de dinosaurios",
+        shortDescription:
+          "Un cuaderno de dibujo con portada de dinosaurios y páginas en blanco de calidad para dibujar, colorear y hacer bocetos. Ideal a partir de 3 años.",
+        description: "Embárcate en una aventura de dinosaurios. Pensado especialmente para jóvenes artistas y aficionados a los dinosaurios, este cuaderno de dibujo ofrece páginas en blanco de calidad, perfectas para dibujar, colorear y hacer bocetos. La vibrante portada de dinosaurios despierta la imaginación e invita a los niños a explorar su lado artístico.\nIdeal para todo tipo de actividades artísticas, del boceto a la pintura, y para fomentar la creatividad y la expresión artística. Un tamaño ideal de 8,5 x 11 pulgadas, perfecto para usar en casa o llevar a cualquier parte. Papel de calidad apto para lápices de colores, ceras, rotuladores de punta fina muy suaves y acuarelas. Una portada vibrante de dinosaurios que inspira aventuras imaginativas y hace que el rato de arte sea divertido.\nTanto si tu hijo es un artista en ciernes como si simplemente le encantan los dinosaurios, es el compañero perfecto para horas de diversión creativa. La cubierta resistente y el papel de calidad están hechos para aguantar todas sus aventuras artísticas, y lo convierten en un gran regalo para cumpleaños, fiestas o cualquier ocasión especial.\nPerfecto para dibujar y garabatear a diario, clases y proyectos de arte, regalos de cumpleaños y fiestas, y para crear sobre la marcha. Una forma divertida y sin ensuciar de inspirar la expresión artística y la imaginación.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-17",
+      pages: 118,
+      asin: "B0D7NYFQZJ",
+      dimensions: { width: 21.59, height: 27.94 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
