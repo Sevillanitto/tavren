@@ -15,6 +15,14 @@ export const authors: Author[] = [
       en: "André Olvera writes noir fiction. “Lo que enterramos antes de tiempo” is his first novel and opens the Fractura series, an ensemble thriller set in New York in which several lives cross over different periods. He is drawn to stories where nothing is what it seems, to secrets kept in silence, and to cases that come together piece by piece. He is currently working on the second book in the series.",
     },
   },
+  {
+    id: "pawsome-studio",
+    name: "Pawsome Studio",
+    bio: {
+      es: "Pawsome Studio es el lugar donde la imaginación se une con la educación para niños de 2 a 12 años. Fundado en 2024, crea productos coloridos y enriquecedores, entre ellos cuadernos, libros de dibujo, diarios, cuentos ilustrados y materiales educativos. Su misión es combinar el aprendizaje responsable con la diversión, para que las mentes jóvenes exploren, creen y aprendan de forma divertida.",
+      en: "Pawsome Studio is where imagination meets education for children aged 2 to 12. Founded in 2024, it creates colorful, enriching products, including notebooks, drawing books, diaries, illustrated storybooks and educational materials. Its mission is to blend responsible learning with fun, empowering young minds to explore, create and learn in delightful ways.",
+    },
+  },
 ];
 
 export function getAuthor(id: string): Author | undefined {

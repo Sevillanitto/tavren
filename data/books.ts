@@ -207,41 +207,47 @@ export const books: Book[] = [
     },
   },
   {
-    // EJEMPLO — cuaderno escrito en inglés
-    slug: "example-blank-pages",
+    slug: "space-adventures-notebook",
     language: "en",
-    authorId: "andre-olvera",
+    authorId: "pawsome-studio",
     gallery: [
-      "/books/example-blank-pages/1.jpg",
-      "/books/example-blank-pages/2.jpg",
-      "/books/example-blank-pages/3.jpg",
-      "/books/example-blank-pages/4.jpg",
+      "/books/space-adventures-notebook/1.png",
+      "/books/space-adventures-notebook/2.png",
+      "/books/space-adventures-notebook/3.png",
+      "/books/space-adventures-notebook/4.png",
     ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D77Q6MR4",
+    },
     category: "notebooks",
-    author: "André Olvera",
+    author: "Pawsome Studio",
     formats: ["paperback"],
     collection: "Tavren Notebooks",
-    cover: "/covers/example-blank-pages.jpg",
+    cover: "/books/space-adventures-notebook/space-adventures-notebook.png",
+    coverStyle: "flat",
     isNew: false,
     translations: {
       en: {
-        title: "EXAMPLE: Blank Pages",
-        subtitle: "A sample notebook",
-        description:
-          "EXAMPLE. Placeholder text: a dotted-paper notebook for ideas, lists and half-finished sketches.",
-        amazonUrl: "#",
+        title: "Space Adventure Composition Notebook",
+        subtitle: "Vibrant cover with illustrations of space and planets",
+        shortDescription:
+          "A vibrant composition notebook with space illustrations, 100 blank pages and premium paper. Perfect for school and home.",
+        description: "Embark on an exciting space adventure with the Space Adventure Composition Notebook. Designed for children and teenagers, this vibrant notebook is perfect for young explorers who love nature and fascinating space creatures.\nA colorful cover with original illustrations of space that will capture any child's imagination. An ideal size of 7.5 x 9.25 inches, perfect for school backpacks and desks. 100 blank pages, ideal for drawing, writing and unleashing creativity, on high-quality paper that offers a smooth, smudge-free writing experience. Each page includes drawings of space, stimulating creativity and learning.\nPerfect for children aged 3 to 8, for school use, personal diaries, sketches and more, and a great gift for birthdays, parties and any special occasion.\nThe space drawings inspire children to create their own stories and artworks, while the blank pages are a perfect space for practicing writing and developing narrative skills. The attractive, colorful design makes learning a fun and exciting experience.\nMore than just a notebook, it is a gateway to imagination and creativity. Whether it's for drawing space, writing exciting stories or simply taking notes, it is the perfect companion for any child or teenager.",
+        amazonUrl: "https://www.amazon.com/dp/B0D77Q6MR4",
       },
       es: {
-        subtitle: "Un cuaderno de ejemplo",
-        description:
-          "EJEMPLO. Texto ficticio de relleno: un cuaderno de papel punteado para ideas, listas y bocetos a medias.",
+        subtitle: "Portada vibrante con ilustraciones del espacio y los planetas",
+        shortDescription:
+          "Un cuaderno de composición con portada vibrante de ilustraciones espaciales, 100 páginas en blanco y papel de calidad. Perfecto para el colegio y para casa.",
+        description: "Embárcate en una emocionante aventura espacial con el Space Adventure Composition Notebook. Pensado para niños y adolescentes, este cuaderno lleno de color es perfecto para pequeños exploradores que aman la naturaleza y las criaturas fascinantes del espacio.\nUna portada colorida con ilustraciones originales del espacio que capturarán la imaginación de cualquier niño. Un tamaño ideal de 7,5 x 9,25 pulgadas, perfecto para mochilas y escritorios escolares. 100 páginas en blanco, ideales para dibujar, escribir y dar rienda suelta a la creatividad, sobre papel de calidad que ofrece una escritura suave y sin manchas. Cada página incluye dibujos del espacio, que estimulan la creatividad y el aprendizaje.\nPerfecto para niños de 3 a 8 años, para uso escolar, diarios personales, bocetos y mucho más, y un regalo estupendo para cumpleaños, fiestas y cualquier ocasión especial.\nLos dibujos del espacio inspiran a los niños a crear sus propias historias y obras, y las páginas en blanco son el espacio perfecto para practicar la escritura y desarrollar la narración. El diseño atractivo y colorido hace que aprender sea una experiencia divertida y emocionante.\nMás que un simple cuaderno, es una puerta a la imaginación y la creatividad. Ya sea para dibujar el espacio, escribir historias emocionantes o simplemente tomar notas, es el compañero perfecto para cualquier niño o adolescente.",
       },
     },
     details: {
-      publicationDate: "2024-11-20",
-      format: "Paperback",
-      pages: 120,
-      isbn: "000-0-00-000000-3",
+      publisher: "Tavren",
+      publicationDate: "2024-06-15",
+      pages: 100,
+      asin: "B0D77Q6MR4",
+      dimensions: { width: 19.05, height: 23.5 }, // cm
     },
   },
 ];

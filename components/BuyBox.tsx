@@ -25,6 +25,7 @@ export default function BuyBox({
 
   return (
     <div>
+      {formats.length > 1 && (
       <div
         role="group"
         aria-label={formatLabel}
@@ -46,12 +47,13 @@ export default function BuyBox({
           </button>
         ))}
       </div>
+      )}
 
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 flex h-12 items-center justify-center bg-ink px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
+        className={`${formats.length > 1 ? "mt-6" : ""} flex h-12 items-center justify-center bg-ink px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90`}
       >
         {buyLabel}
       </a>
