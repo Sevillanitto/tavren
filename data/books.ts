@@ -338,6 +338,94 @@ export const books: Book[] = [
       dimensions: { width: 19.05, height: 23.5 }, // cm
     },
   },
+  {
+    slug: "teddys-adventure-notebook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/Teddys-Adventure-notebook/1.png",
+      "/books/Teddys-Adventure-notebook/2.png",
+      "/books/Teddys-Adventure-notebook/3.png",
+      "/books/Teddys-Adventure-notebook/4.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D76PMMDN",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/Teddys-Adventure-notebook/Teddys-Adventure-notebook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Teddy's Adventure Notebook",
+        subtitle: "Journal and notebook for kids",
+        shortDescription:
+          "A composition-size journal with a soft matte teddy bear cover, lined and blank pages and teddy doodles on every page.",
+        description: "Every little girl needs a special place to capture her dreams, drawings and daily adventures. The Teddy's Adventure Notebook is designed to be that perfect companion, encouraging creativity and self-expression.\nComposition size (7.5 x 9.25 inches), easy to carry or slip into a bag or backpack. A soft matte cover featuring cute teddy bears, designed to inspire and delight. High-quality paper, ideal for crayons, colored pencils, watercolor paints and fine-tip markers, with lined and blank pages. Cute teddy bear doodles on every page to inspire creativity.\nWhether she is journaling, drawing, doodling or taking notes, it is perfect as a daily journal, for sketching, doodling, writing stories and school notes, and as a gift for birthdays and holidays.\nMore than just a notebook, it is a place where imagination comes to life. Perfect for girls aged 3 to 10 who love teddy bears and enjoy expressing themselves creatively.",
+        amazonUrl: "https://www.amazon.com/dp/B0D76PMMDN",
+      },
+      es: {
+        subtitle: "Diario y cuaderno para niños",
+        shortDescription:
+          "Un diario de tamaño composición con cubierta mate suave de ositos, páginas con y sin rayas y dibujos de ositos en cada página.",
+        description: "Toda niña necesita un lugar especial donde guardar sus sueños, dibujos y aventuras de cada día. El Teddy's Adventure Notebook está pensado para ser ese compañero perfecto, que fomenta la creatividad y la expresión personal.\nTamaño composición (7,5 x 9,25 pulgadas), fácil de llevar o de meter en un bolso o una mochila. Una cubierta mate suave con adorables ositos, pensada para inspirar y encantar. Papel de calidad, ideal para ceras, lápices de colores, acuarelas y rotuladores de punta fina, con páginas con y sin rayas. Garabatos de ositos en cada página para despertar la creatividad.\nYa sea para escribir un diario, dibujar, garabatear o tomar notas, es perfecto como diario, para bocetos, garabatos, escribir historias y apuntes del cole, y como regalo para cumpleaños y fiestas.\nMás que un simple cuaderno, es un lugar donde la imaginación cobra vida. Perfecto para niñas de 3 a 10 años a las que les encantan los ositos y disfrutan expresándose de forma creativa.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-14",
+      pages: 100,
+      asin: "B0D76PMMDN",
+      dimensions: { width: 19.05, height: 23.5 }, // cm
+    },
+  },
+  {
+    slug: "mermaid-dreams-notebook",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/mermaid-dreams-notebook/1.png",
+      "/books/mermaid-dreams-notebook/2.png",
+      "/books/mermaid-dreams-notebook/3.png",
+      "/books/mermaid-dreams-notebook/4.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D77RGWTY",
+    },
+    category: "notebooks",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Notebooks",
+    cover: "/books/mermaid-dreams-notebook/mermaid-dreams-notebook.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Mermaid Dreams Composition Notebook",
+        subtitle: "Journal and sketchbook for girls",
+        shortDescription:
+          "A composition notebook with a mermaid cover, 100 lined and illustrated pages and mermaid doodles on every page.",
+        description: "Dive into a world of imagination. The Mermaid Dreams Composition Notebook is designed to inspire young minds, with a vibrant cover adorned with original illustrations of beautiful mermaids. Inside, high-quality pages perfect for journaling, note-taking, sketching and doodling.\nSpecially crafted for girls and young teens, it is more than just a place to write: it is a gateway to a world of creativity and wonder.\n100 premium pages, a blend of lined and illustrated pages for any activity. A size of 7.5 x 9.25 inches, easy to carry and perfect for backpacks and bags. A durable, soft matte cover with a stunning mermaid design that is pleasant to the touch and easy to grip. High-quality paper suitable for crayons, colored pencils, watercolor paints and fine-tip markers, and mermaid-themed doodles on every page to color and spark creativity and fun.\nIdeal for daily journaling, drawing, doodling, sketching, taking notes and more, and a great gift for birthdays, Christmas, Easter, gift baskets or stocking stuffers.\nWhether for a toddler, preschooler, kindergartner or school-aged child, it will inspire her creativity and imagination while providing hours of entertainment. A fun, mess-free way to nurture creativity for girls aged 3 and up.",
+        amazonUrl: "https://www.amazon.com/dp/B0D77RGWTY",
+      },
+      es: {
+        subtitle: "Diario y cuaderno de dibujo para niñas",
+        shortDescription:
+          "Un cuaderno de composición con portada de sirenas, 100 páginas con y sin ilustraciones y garabatos de sirenas en cada página.",
+        description: "Sumérgete en un mundo de imaginación. El Mermaid Dreams Composition Notebook está pensado para inspirar a las mentes jóvenes, con una portada vibrante adornada con ilustraciones originales de hermosas sirenas. Dentro, páginas de calidad perfectas para escribir un diario, tomar notas, dibujar y garabatear.\nCreado especialmente para niñas y jóvenes adolescentes, es más que un lugar donde escribir: es una puerta a un mundo de creatividad y asombro.\n100 páginas de calidad, una combinación de páginas con rayas y páginas ilustradas para cualquier actividad. Un tamaño de 7,5 x 9,25 pulgadas, fácil de llevar y perfecto para mochilas y bolsos. Una cubierta mate suave y resistente, con un precioso diseño de sirenas, agradable al tacto y fácil de agarrar. Papel de calidad apto para ceras, lápices de colores, acuarelas y rotuladores de punta fina, y garabatos de sirenas en cada página para colorear y despertar la creatividad y la diversión.\nIdeal para escribir un diario, dibujar, garabatear, hacer bocetos, tomar notas y mucho más, y un gran regalo para cumpleaños, Navidad, Pascua, cestas de regalo o detalles navideños.\nYa sea para un niño pequeño, de preescolar, de infantil o en edad escolar, inspirará su creatividad e imaginación y le dará horas de entretenimiento. Una forma divertida y sin ensuciar de fomentar la creatividad en niñas de 3 años en adelante.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-06-16",
+      pages: 100,
+      asin: "B0D77RGWTY",
+      dimensions: { width: 19.05, height: 23.5 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
