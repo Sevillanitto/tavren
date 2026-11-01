@@ -68,7 +68,7 @@ export interface Book {
 
 /*
  * CATÁLOGO — todos los libros de la web.
- * Los 4 libros de abajo son datos FICTICIOS de EJEMPLO. Sustitúyelos por los reales.
+ * Añade aquí cada libro nuevo (ver README).
  */
 export const books: Book[] = [
   {
@@ -126,84 +126,6 @@ export const books: Book[] = [
       isbn: "979-8165629990",
       asin: "B0HPKLSSKY",
       dimensions: { width: 15.24, height: 22.86 }, // cm
-    },
-  },
-  {
-    // EJEMPLO — libro de cocina escrito en inglés
-    slug: "example-sunday-table",
-    language: "en",
-    authorId: "andre-olvera",
-    gallery: [
-      "/books/example-sunday-table/1.jpg",
-      "/books/example-sunday-table/2.jpg",
-      "/books/example-sunday-table/3.jpg",
-      "/books/example-sunday-table/4.jpg",
-    ],
-    category: "cooking",
-    author: "André Olvera",
-    formats: ["paperback"],
-    collection: "World Kitchen Notebooks",
-    cover: "/covers/example-sunday-table.jpg",
-    isNew: false,
-    translations: {
-      en: {
-        title: "EXAMPLE: The Sunday Table",
-        subtitle: "A sample cookbook",
-        description:
-          "EXAMPLE. Placeholder text: slow recipes for long lunches, from simple soups to showstopping roasts.",
-        amazonUrl: "#",
-      },
-      es: {
-        subtitle: "Un libro de cocina de ejemplo",
-        description:
-          "EJEMPLO. Texto ficticio de relleno: recetas pausadas para comidas largas, desde sopas sencillas hasta asados de lucimiento.",
-      },
-    },
-    details: {
-      publicationDate: "2024-09-02",
-      format: "Paperback",
-      pages: 180,
-      isbn: "000-0-00-000000-1",
-    },
-  },
-  {
-    // EJEMPLO — infantil en ambos idiomas
-    slug: "ejemplo-el-zorro-y-la-luna",
-    language: "both",
-    authorId: "andre-olvera",
-    gallery: [
-      "/books/ejemplo-el-zorro-y-la-luna/1.jpg",
-      "/books/ejemplo-el-zorro-y-la-luna/2.jpg",
-      "/books/ejemplo-el-zorro-y-la-luna/3.jpg",
-      "/books/ejemplo-el-zorro-y-la-luna/4.jpg",
-    ],
-    category: "kids",
-    author: "André Olvera",
-    formats: ["paperback"],
-    collection: "Tavren Kids",
-    cover: "/covers/ejemplo-el-zorro-y-la-luna.jpg",
-    isNew: true,
-    translations: {
-      en: {
-        title: "EXAMPLE: The Fox and the Moon",
-        subtitle: "A sample picture book",
-        description:
-          "EXAMPLE. Placeholder text: a little fox decides to find out where the moon goes when morning comes.",
-        amazonUrl: "#",
-      },
-      es: {
-        title: "EJEMPLO: El zorro y la luna",
-        subtitle: "Un álbum ilustrado de ejemplo",
-        description:
-          "EJEMPLO. Texto ficticio de relleno: un zorrito decide averiguar adónde va la luna cuando llega la mañana.",
-        amazonUrl: "#",
-      },
-    },
-    details: {
-      publicationDate: "2025-03-10",
-      format: "Hardcover / Tapa dura",
-      pages: 40,
-      isbn: "000-0-00-000000-2",
     },
   },
   {
