@@ -38,6 +38,11 @@ export type BookContent = Partial<BookTranslation>;
 export type CoverStyle = "mockup" | "flat";
 export type BookFormat = "ebook" | "paperback" | "hardcover";
 
+export interface Contributor {
+  name: string;
+  role: "author" | "illustrator";
+}
+
 export interface Book {
   slug: string;
   /** Idioma en el que está escrito el libro (no el de la ficha). */
@@ -45,6 +50,8 @@ export interface Book {
   category: Category;
   author: string; // nombre mostrado en las tarjetas
   authorId: string; // id en data/authors.ts
+  /** Colaboradores sin ficha de autor (autoría adicional, ilustración). */
+  contributors?: Contributor[];
   series?: string; // p. ej. "Fractura"
   seriesNumber?: number; // posición en la serie
   formats: BookFormat[]; // formatos disponibles
@@ -687,6 +694,56 @@ export const books: Book[] = [
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
+  {
+    slug: "el-jardin-magico",
+    language: "es",
+    authorId: "tavren-ediciones",
+    contributors: [
+      { name: "Andrew T. Moore", role: "author" },
+      { name: "Becca Harris", role: "illustrator" },
+    ],
+    gallery: [
+      "/books/jardin magico/1.png",
+      "/books/jardin magico/2.png",
+      "/books/jardin magico/3.png",
+      "/books/jardin magico/4.png",
+      "/books/jardin magico/5.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.es/dp/B0HQ99BN3W",
+    },
+    category: "kids",
+    author: "Tavren Ediciones",
+    formats: ["paperback"],
+    collection: "Tavren Kids",
+    cover: "/books/jardin magico/jardin magico.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      es: {
+        title: "El Jardín Mágico",
+        subtitle: "Una aventura por la naturaleza con actividades, experimentos y dibujos para colorear",
+        shortDescription:
+          "Mia, Emily y Jack descubren un portal en un jardín y viajan por mundos mágicos donde aprenden a cuidar la naturaleza. Con actividades, experimentos y dibujos para colorear.",
+        description: "¿Podemos ser una parte vital del cuidado de la naturaleza?\nCuando Mia, Emily y Jack descubren un portal en un jardín, se embarcan en una serie de increíbles aventuras a través de mundos mágicos y diversos. Desde un planeta vibrante y arcoíris lleno de flores cantantes y árboles luminosos, hasta un misterioso reino submarino con algas fluorescentes y peces coloridos, cada lugar les enseña valiosas lecciones sobre la naturaleza y la importancia de protegerla.\nA lo largo de sus viajes, los niños se enfrentan a desafíos que ponen a prueba su ingenio y trabajo en equipo. ¿Podrán reparar placas tectónicas en terrenos volcánicos para evitar terremotos? ¿Qué aprenderán de las extraordinarias criaturas de las montañas heladas? ¿Y cómo les ayudarán sus nuevas habilidades y conocimientos cuando regresen a casa?\nCon la ayuda de Spark, su fiel amigo animal, los niños descubren que cada pequeño esfuerzo cuenta para mantener la belleza y la armonía de nuestro mundo. «El Jardín Mágico» es una historia cautivadora que combina aventura y aprendizaje, e inspira a los jóvenes lectores a valorar y cuidar nuestro planeta.\nAdemás de la historia, el libro incluye:\n- Actividades relacionadas con la naturaleza\n- Experimentos sorprendentes\n- Páginas para colorear y dibujos\n- Actividades al aire libre para disfrutar en familia\nInterior a todo color.\nÚnete a Mia, Emily, Jack y Spark en este emocionante viaje y descubre cómo todos podemos ser guardianes de la naturaleza.",
+        amazonUrl: "https://www.amazon.es/dp/B0HQ99BN3W",
+      },
+      en: {
+        subtitle: "A nature adventure with activities, experiments and coloring pages",
+        shortDescription:
+          "Mia, Emily and Jack discover a portal in a garden and travel through magical worlds where they learn to take care of nature. With activities, experiments and coloring pages.",
+        description: "Can we be a vital part of taking care of nature?\nWhen Mia, Emily and Jack discover a portal in a garden, they set off on a series of incredible adventures through magical and diverse worlds. From a vibrant, rainbow-colored planet full of singing flowers and glowing trees to a mysterious underwater kingdom with fluorescent seaweed and colorful fish, every place teaches them valuable lessons about nature and the importance of protecting it.\nAlong the way, the children face challenges that test their ingenuity and teamwork. Will they be able to repair tectonic plates on volcanic terrain to prevent earthquakes? What will they learn from the extraordinary creatures of the icy mountains? And how will their new skills and knowledge help them when they return home?\nWith the help of Spark, their loyal animal friend, the children discover that every small effort counts to preserve the beauty and harmony of our world. \"El Jardín Mágico\" is a captivating story that combines adventure and learning, inspiring young readers to value and care for our planet.\nBesides the story, the book includes:\n- Nature-related activities\n- Surprising experiments\n- Coloring pages and drawings\n- Outdoor activities to enjoy with family\nFull-color interior.\nJoin Mia, Emily, Jack and Spark on this exciting journey and discover how we can all become guardians of nature.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2026-11-03",
+      pages: 130,
+      isbn: "979-8167627840",
+      asin: "B0HQ99BN3W",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
@@ -696,6 +753,7 @@ export interface LocalizedBook extends BookTranslation {
   category: Category;
   author: string;
   authorId: string;
+  contributors?: Contributor[];
   series?: string;
   seriesNumber?: number;
   formats: BookFormat[];
@@ -757,6 +815,7 @@ function localize(book: Book, lang: Lang): LocalizedBook {
     category: book.category,
     author: book.author,
     authorId: book.authorId,
+    contributors: book.contributors,
     series: book.series,
     seriesNumber: book.seriesNumber,
     formats: book.formats,

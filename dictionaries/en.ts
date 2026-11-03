@@ -99,6 +99,7 @@ export const en = {
     detailLabels: {
       publisher: "Publisher",
       author: "Author",
+      illustration: "Illustration",
       series: "Series",
       dimensions: "Dimensions",
       publicationDate: "Publication date",

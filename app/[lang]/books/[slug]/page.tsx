@@ -16,6 +16,24 @@ function shortDescription(book: LocalizedBook): string {
   return book.shortDescription ?? "";
 }
 
+/** Párrafos por línea; las líneas que empiezan por "- " forman una lista. */
+function descriptionBlocks(text: string) {
+  const blocks: (
+    | { type: "p"; text: string }
+    | { type: "list"; items: string[] }
+  )[] = [];
+  for (const line of text.split("\n").filter(Boolean)) {
+    const last = blocks[blocks.length - 1];
+    if (line.startsWith("- ")) {
+      if (last?.type === "list") last.items.push(line.slice(2));
+      else blocks.push({ type: "list", items: [line.slice(2)] });
+    } else {
+      blocks.push({ type: "p", text: line });
+    }
+  }
+  return blocks;
+}
+
 export const dynamicParams = false;
 
 // Todos los libros existen en /es y /en.
@@ -101,10 +119,21 @@ export default async function BookPage({
   const dimensions = dims
     ? `${numFmt.format(dims.width)} × ${numFmt.format(dims.height)} cm`
     : "";
+  // Autor principal + colaboradores con rol author; ilustración aparte.
+  const contributors = book.contributors ?? [];
+  const authorsText = [
+    book.author,
+    ...contributors.filter((c) => c.role === "author").map((c) => c.name),
+  ].join(", ");
+  const illustrators = contributors
+    .filter((c) => c.role === "illustrator")
+    .map((c) => c.name)
+    .join(", ");
   // Solo se muestran las filas que tengan valor.
   const rows = [
     { label: t.detailLabels.publisher, value: book.details.publisher },
-    { label: t.detailLabels.author, value: book.author },
+    { label: t.detailLabels.author, value: authorsText },
+    { label: t.detailLabels.illustration, value: illustrators },
     { label: t.detailLabels.series, value: seriesText },
     { label: t.detailLabels.publicationDate, value: date },
     {
@@ -175,9 +204,20 @@ export default async function BookPage({
       <div className="mt-14 border-t border-line">
         <Accordion title={t.sections.description} defaultOpen>
           <div className="max-w-3xl space-y-4 leading-relaxed text-ink/85">
-            {book.description.split("\n").filter(Boolean).map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            {descriptionBlocks(book.description).map((b, i) =>
+              b.type === "list" ? (
+                <ul
+                  key={i}
+                  className="list-disc space-y-1 pl-5 marker:text-[0.7em] marker:text-ink/50"
+                >
+                  {b.items.map((it, j) => (
+                    <li key={j}>{it}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p key={i}>{b.text}</p>
+              ),
+            )}
           </div>
         </Accordion>
         <Accordion title={t.sections.details}>

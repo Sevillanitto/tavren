@@ -23,6 +23,14 @@ export const authors: Author[] = [
       en: "Pawsome Studio is where imagination meets education for children aged 2 to 12. Founded in 2024, it creates colorful, enriching products, including notebooks, drawing books, diaries, illustrated storybooks and educational materials. Its mission is to blend responsible learning with fun, empowering young minds to explore, create and learn in delightful ways.",
     },
   },
+  {
+    id: "tavren-ediciones",
+    name: "Tavren Ediciones",
+    bio: {
+      es: "Tavren Ediciones es el sello con el que se publica este libro.",
+      en: "Tavren Ediciones is the imprint under which this book is published.",
+    },
+  },
 ];
 
 export function getAuthor(id: string): Author | undefined {

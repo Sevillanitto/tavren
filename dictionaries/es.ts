@@ -101,6 +101,7 @@ export const es: Dictionary = {
     detailLabels: {
       publisher: "Editorial",
       author: "Autor",
+      illustration: "Ilustración",
       series: "Serie",
       dimensions: "Dimensiones",
       publicationDate: "Fecha de publicación",
