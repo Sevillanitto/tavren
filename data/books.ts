@@ -644,8 +644,7 @@ export const books: Book[] = [
     },
   },
   {
-    // TODO: faltan el enlace de Amazon, el ASIN, el ISBN y la fecha de publicación.
-    // El título es el mismo que el de activity-book; conviene ponerle uno distinto.
+    // TODO: el título es el mismo que el de activity-book; conviene ponerle uno distinto.
     slug: "activity-book-2",
     language: "en",
     authorId: "pawsome-studio",
@@ -656,7 +655,7 @@ export const books: Book[] = [
       "/books/activity-book-2/4.png",
     ],
     amazonUrls: {
-      paperback: "#",
+      paperback: "https://www.amazon.com/dp/B0DB1D79RM",
     },
     category: "kids",
     author: "Pawsome Studio",
@@ -671,7 +670,7 @@ export const books: Book[] = [
         shortDescription:
           "An activity journal with 110 full-color pages of coloring, games, puzzles and learning. Designed for children ages 3 to 8.",
         description: "Welcome to the Activity Journal for Kids, with 110 full-color pages. Specially designed for children ages 3 to 8, it is an endless source of fun and learning.\nInside you will find pages to jot down thoughts, memories and important things; fun, educational questions that stimulate reflection and self-awareness; adorable images to color; games and puzzles that develop cognitive skills; and exercises that combine play with education.\nIt also includes activities that foster a love for the environment, interesting facts about animals around the world, a space adventure to learn about planets, stars and the universe, games to learn the alphabet and colors, activities that promote the value of friendship and family, ideas to enjoy and learn outdoors, and fun projects to do together as a family.\nHigh-quality pages and vibrant colors, in a 6 x 9 inch size that is ideal to carry everywhere. It promotes creativity, critical thinking and emotional connection.\nThe perfect companion for any occasion, whether at home, in the park or on the go. Each page is a new adventure waiting to be discovered.",
-        amazonUrl: "#",
+        amazonUrl: "https://www.amazon.com/dp/B0DB1D79RM",
       },
       es: {
         shortDescription:
@@ -681,7 +680,10 @@ export const books: Book[] = [
     },
     details: {
       publisher: "Tavren",
+      publicationDate: "2024-07-22",
       pages: 110,
+      isbn: "979-8333834041",
+      asin: "B0DB1D79RM",
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
