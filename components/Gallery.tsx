@@ -40,6 +40,7 @@ export default function Gallery({
       onKeyDown={onKeyDown}
       className="flex flex-col gap-6 md:flex-row md:gap-4"
     >
+      {images.length > 1 && (
       <div className="order-2 flex items-start gap-[15px] overflow-x-auto md:order-1 md:flex-col md:overflow-visible">
         {images.map((img, i) => (
           <button
@@ -69,6 +70,7 @@ export default function Gallery({
           </button>
         ))}
       </div>
+      )}
 
       <div className="order-1 flex flex-1 items-start justify-center px-2 md:order-2 md:px-6">
         {/* key: reinicia el fundido de 150 ms al cambiar de foto */}

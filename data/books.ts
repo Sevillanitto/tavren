@@ -600,6 +600,91 @@ export const books: Book[] = [
       dimensions: { width: 21.59, height: 27.94 }, // cm
     },
   },
+  {
+    slug: "activity-book",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/activity-book/1.png",
+      "/books/activity-book/2.png",
+      "/books/activity-book/3.png",
+      "/books/activity-book/4.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0D8ZNST7G",
+    },
+    category: "kids",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Kids",
+    cover: "/books/activity-book/activity-book.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Activity Journal for Kids",
+        shortDescription:
+          "An activity journal with 110 full-color pages of coloring, games, puzzles and learning. Designed for children ages 3 to 8.",
+        description: "Welcome to the Activity Journal for Kids, with 110 full-color pages. Specially designed for children ages 3 to 8, it is an endless source of fun and learning.\nInside you will find pages to jot down thoughts, memories and important things; fun, educational questions that stimulate reflection and self-awareness; adorable images to color; games and puzzles that develop cognitive skills; and exercises that combine play with education.\nIt also includes activities that foster a love for the environment, interesting facts about animals around the world, a space adventure to learn about planets, stars and the universe, games to learn the alphabet and colors, activities that promote the value of friendship and family, ideas to enjoy and learn outdoors, and fun projects to do together as a family.\nHigh-quality pages and vibrant colors, in a 6 x 9 inch size that is ideal to carry everywhere. It promotes creativity, critical thinking and emotional connection.\nThe perfect companion for any occasion, whether at home, in the park or on the go. Each page is a new adventure waiting to be discovered.",
+        amazonUrl: "https://www.amazon.com/dp/B0D8ZNST7G",
+      },
+      es: {
+        shortDescription:
+          "Un diario de actividades con 110 páginas a todo color de colorear, juegos, puzzles y aprendizaje. Pensado para niños de 3 a 8 años.",
+        description: "Te damos la bienvenida al Activity Journal for Kids, con 110 páginas a todo color. Pensado especialmente para niños de 3 a 8 años, es una fuente inagotable de diversión y aprendizaje.\nDentro encontrarás páginas para apuntar pensamientos, recuerdos y cosas importantes; preguntas divertidas y educativas que estimulan la reflexión y el autoconocimiento; adorables dibujos para colorear; juegos y puzzles que desarrollan las habilidades cognitivas; y ejercicios que combinan juego y educación.\nTambién incluye actividades que fomentan el amor por el medio ambiente, datos interesantes sobre animales de todo el mundo, una aventura espacial para aprender sobre planetas, estrellas y el universo, juegos para aprender el abecedario y los colores, actividades que promueven el valor de la amistad y la familia, ideas para disfrutar y aprender al aire libre y proyectos divertidos para hacer en familia.\nPáginas de calidad y colores vibrantes, en un tamaño de 6 x 9 pulgadas ideal para llevar a todas partes. Fomenta la creatividad, el pensamiento crítico y la conexión emocional.\nEl compañero perfecto para cualquier ocasión, en casa, en el parque o de viaje. Cada página es una nueva aventura por descubrir.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2024-07-05",
+      pages: 110,
+      isbn: "979-8332320514",
+      asin: "B0D8ZNST7G",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
+  {
+    // TODO: faltan el enlace de Amazon, el ASIN, el ISBN y la fecha de publicación.
+    // El título es el mismo que el de activity-book; conviene ponerle uno distinto.
+    slug: "activity-book-2",
+    language: "en",
+    authorId: "pawsome-studio",
+    gallery: [
+      "/books/activity-book-2/1.png",
+      "/books/activity-book-2/2.png",
+      "/books/activity-book-2/3.png",
+      "/books/activity-book-2/4.png",
+    ],
+    amazonUrls: {
+      paperback: "#",
+    },
+    category: "kids",
+    author: "Pawsome Studio",
+    formats: ["paperback"],
+    collection: "Tavren Kids",
+    cover: "/books/activity-book-2/activity-book-2.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Activity Journal for Kids",
+        shortDescription:
+          "An activity journal with 110 full-color pages of coloring, games, puzzles and learning. Designed for children ages 3 to 8.",
+        description: "Welcome to the Activity Journal for Kids, with 110 full-color pages. Specially designed for children ages 3 to 8, it is an endless source of fun and learning.\nInside you will find pages to jot down thoughts, memories and important things; fun, educational questions that stimulate reflection and self-awareness; adorable images to color; games and puzzles that develop cognitive skills; and exercises that combine play with education.\nIt also includes activities that foster a love for the environment, interesting facts about animals around the world, a space adventure to learn about planets, stars and the universe, games to learn the alphabet and colors, activities that promote the value of friendship and family, ideas to enjoy and learn outdoors, and fun projects to do together as a family.\nHigh-quality pages and vibrant colors, in a 6 x 9 inch size that is ideal to carry everywhere. It promotes creativity, critical thinking and emotional connection.\nThe perfect companion for any occasion, whether at home, in the park or on the go. Each page is a new adventure waiting to be discovered.",
+        amazonUrl: "#",
+      },
+      es: {
+        shortDescription:
+          "Un diario de actividades con 110 páginas a todo color de colorear, juegos, puzzles y aprendizaje. Pensado para niños de 3 a 8 años.",
+        description: "Te damos la bienvenida al Activity Journal for Kids, con 110 páginas a todo color. Pensado especialmente para niños de 3 a 8 años, es una fuente inagotable de diversión y aprendizaje.\nDentro encontrarás páginas para apuntar pensamientos, recuerdos y cosas importantes; preguntas divertidas y educativas que estimulan la reflexión y el autoconocimiento; adorables dibujos para colorear; juegos y puzzles que desarrollan las habilidades cognitivas; y ejercicios que combinan juego y educación.\nTambién incluye actividades que fomentan el amor por el medio ambiente, datos interesantes sobre animales de todo el mundo, una aventura espacial para aprender sobre planetas, estrellas y el universo, juegos para aprender el abecedario y los colores, actividades que promueven el valor de la amistad y la familia, ideas para disfrutar y aprender al aire libre y proyectos divertidos para hacer en familia.\nPáginas de calidad y colores vibrantes, en un tamaño de 6 x 9 pulgadas ideal para llevar a todas partes. Fomenta la creatividad, el pensamiento crítico y la conexión emocional.\nEl compañero perfecto para cualquier ocasión, en casa, en el parque o de viaje. Cada página es una nueva aventura por descubrir.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      pages: 110,
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
