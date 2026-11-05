@@ -834,6 +834,62 @@ export const books: Book[] = [
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
+  {
+    slug: "nordic-cuisine",
+    language: "en",
+    authorId: "cinnamon-press",
+    contributors: [
+      { name: "John A. Dillon", role: "author" },
+      { name: "Ross Allen", role: "editor" },
+    ],
+    series: "World Cuisine",
+    seriesNumber: 2,
+    gallery: [
+      "/books/nordic-cuisine/1.png",
+      "/books/nordic-cuisine/2.png",
+      "/books/nordic-cuisine/3.png",
+      "/books/nordic-cuisine/4.png",
+      "/books/nordic-cuisine/5.png",
+      "/books/nordic-cuisine/6.png",
+      "/books/nordic-cuisine/7.png",
+      "/books/nordic-cuisine/8.png",
+      "/books/nordic-cuisine/9.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0FQ3TTHLT",
+    },
+    category: "cooking",
+    author: "Cinnamon Press",
+    formats: ["paperback"],
+    collection: "Tavren Cooking",
+    cover: "/books/nordic-cuisine/nordic-cuisine.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Nordic & Cuisine Cookbook",
+        subtitle: "The Essence of Nordic Gastronomy: History, Ingredients and Recipes",
+        shortDescription:
+          "A Nordic cookbook with traditional recipes from five Nordic countries, combining rich tradition with modern health principles.",
+        description: "Discover authentic recipes from Denmark, Sweden, Norway and beyond. This guide to Nordic cuisine combines rich tradition with modern health principles, and gives you everything you need whether you are new to the region or a seasoned cook.\nInside you will find:\n- Authentic recipes: traditional Nordic dishes from five Nordic countries\n- Nordic baking: recipes for beginners, from classic breads to cinnamon buns with cardamom\n- Full cuisine coverage: fish, meat, vegetables and desserts, such as gravlax and rose-hip soup\n- Essential techniques: home preserving, fermentation and smoking\nBring the cozy, healthy and rich flavors of Scandinavia home.",
+        amazonUrl: "https://www.amazon.com/dp/B0FQ3TTHLT",
+      },
+      es: {
+        subtitle: "La esencia de la gastronomía nórdica: historia, ingredientes y recetas",
+        shortDescription:
+          "Un libro de cocina nórdica con recetas tradicionales de cinco países nórdicos, que combina una rica tradición con principios modernos de salud.",
+        description: "Descubre recetas auténticas de Dinamarca, Suecia, Noruega y más allá. Esta guía de la cocina nórdica combina una rica tradición con principios modernos de salud, y te da todo lo que necesitas tanto si empiezas a conocer la región como si ya cocinas con experiencia.\nDentro encontrarás:\n- Recetas auténticas: platos tradicionales nórdicos de cinco países nórdicos\n- Repostería nórdica: recetas para principiantes, de los panes clásicos a los bollos de canela con cardamomo\n- Cocina completa: pescado, carne, verduras y postres, como el gravlax y la sopa de escaramujo\n- Técnicas esenciales: conservas caseras, fermentación y ahumado\nLleva a casa los sabores acogedores, saludables y ricos de Escandinavia.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2025-09-05",
+      pages: 201,
+      isbn: "979-8264032394",
+      asin: "B0FQ3TTHLT",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
