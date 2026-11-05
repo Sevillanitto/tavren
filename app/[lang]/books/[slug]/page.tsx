@@ -140,8 +140,11 @@ export default async function BookPage({
       label: t.detailLabels.formats,
       value: book.formats.map((f) => formatLabels[f]).join(" · "),
     },
-    // Idioma del libro, no el de la página.
-    { label: t.detailLabels.language, value: t.languageNames[book.language] },
+    // Idioma del libro (o de la edición mostrada, si tiene ediciones).
+    {
+      label: t.detailLabels.language,
+      value: t.languageNames[book.editionLang ?? book.language],
+    },
     {
       label: t.detailLabels.pages,
       value: book.details.pages ? String(book.details.pages) : "",

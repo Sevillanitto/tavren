@@ -25,6 +25,7 @@ Comprobar el build de producción: `npm run build && npm start`.
    - `details`: `publicationDate` (AAAA-MM-DD), `pages`, `isbn`, `asin` (solo informativo, no se muestra), `dimensions` (`{ width, height }` en cm, p. ej. `15.24` y `22.86`; se muestran con coma en ES y punto en EN) y `publisher` (por defecto "Tavren"). La ficha solo muestra las filas que tengan valor.
    - `shortDescription` (dentro de cada idioma de `translations`): texto corto de la columna derecha de la ficha; si falta se usan las dos primeras frases de `description`.
    - Dentro de `description`, las líneas que empiezan por `- ` se muestran como lista con viñetas.
+   - `editions` (opcional): una edición por idioma (`es` y/o `en`), cada una con su propia `cover`, `gallery`, `amazonUrls`, `amazonUrl` y `details` (asin, isbn, publicationDate, pages, dimensions). Lo que falte en la edición se toma del libro. Un libro con edición en los dos idiomas se trata como `"both"`: sin aviso de idioma ni indicador EN/ES, con la portada, la galería, el enlace y los datos de la edición del idioma de la página (la fila Idioma muestra el de esa edición). El título de cada idioma va en `translations`. Ejemplo: `el-jardin-magico`.
 
 Los libros escritos en el otro idioma aparecen en la home bajo la pastilla "En inglés" / "Books in Spanish" (con un indicador EN/ES) y enlazan a su ficha en el idioma de la página actual.
 
