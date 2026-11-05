@@ -999,6 +999,55 @@ export const books: Book[] = [
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
+  {
+    slug: "chef-dictionary",
+    language: "en",
+    authorId: "cinnamon-press",
+    contributors: [{ name: "John A. Dillon", role: "author" }],
+    gallery: [
+      "/books/chef-dictionary/1.png",
+      "/books/chef-dictionary/2.png",
+      "/books/chef-dictionary/3.png",
+      "/books/chef-dictionary/4.png",
+      "/books/chef-dictionary/5.png",
+      "/books/chef-dictionary/6.png",
+      "/books/chef-dictionary/7.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0FXSPLR1K",
+    },
+    category: "cooking",
+    author: "Cinnamon Press",
+    formats: ["paperback"],
+    collection: "Tavren Cooking",
+    cover: "/books/chef-dictionary/chef-dictionary.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "The New Chef's Dictionary",
+        subtitle: "Cuisine A-Z: The Comprehensive Guide to Contemporary Gastronomy",
+        shortDescription:
+          "An A-to-Z reference with more than 150 of the newest terms in contemporary cuisine, plus flavor mapping, a restaurant guide and advanced recipes.",
+        description: "Are you truly fluent in the language of gastronomy? From the science of fermentation to the labs of global culinary masters, the vocabulary of modern cooking is constantly evolving. The New Chef's Dictionary is the definitive A-to-Z reference, designed for serious professionals and passionate foodies.\nThis is not a simple glossary. It decodes more than 150 of the newest and most complex terms in contemporary cuisine, including molecular techniques, cutting-edge plating and sustainable sourcing, and the knowledge doesn't stop at definitions.\nWhat you will master:\n- Avant-garde terminology: the vocabulary of molecular and progressive cuisine\n- Global flavor mapping: the precise chemistry behind taste combinations, to achieve perfect balance and surprise\n- A restaurant guide: the world's best current restaurants and the innovative movements they represent\n- Advanced recipes: techniques and dishes that follow the latest culinary trends\nStop guessing what the menu means.",
+        amazonUrl: "https://www.amazon.com/dp/B0FXSPLR1K",
+      },
+      es: {
+        subtitle: "Cuisine A-Z: la guía completa de la gastronomía contemporánea",
+        shortDescription:
+          "Una referencia de la A a la Z con más de 150 de los términos más nuevos de la cocina contemporánea, además de mapas de sabores, una guía de restaurantes y recetas avanzadas.",
+        description: "¿Dominas de verdad el lenguaje de la gastronomía? Desde la ciencia de la fermentación hasta los laboratorios de los grandes maestros de la cocina, el vocabulario de la cocina moderna está en constante evolución. The New Chef's Dictionary es la referencia definitiva de la A a la Z, pensada para profesionales exigentes y aficionados apasionados.\nNo es un simple glosario. Descifra más de 150 de los términos más nuevos y complejos de la cocina contemporánea, entre ellos técnicas moleculares, emplatados de vanguardia y abastecimiento sostenible, y el conocimiento no termina en las definiciones.\nLo que vas a dominar:\n- Terminología de vanguardia: el vocabulario de la cocina molecular y progresista\n- Mapas de sabores globales: la química precisa de las combinaciones de sabor, para lograr equilibrio y sorpresa\n- Una guía de restaurantes: los mejores restaurantes actuales del mundo y los movimientos innovadores que representan\n- Recetas avanzadas: técnicas y platos que siguen las últimas tendencias culinarias\nDeja de adivinar qué significa el menú.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2025-10-24",
+      pages: 259,
+      isbn: "979-8271382574",
+      asin: "B0FXSPLR1K",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
