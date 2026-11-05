@@ -890,6 +890,60 @@ export const books: Book[] = [
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
+  {
+    slug: "spain-cuisine",
+    language: "en",
+    authorId: "cinnamon-press",
+    contributors: [
+      { name: "John A. Dillon", role: "author" },
+      { name: "Ross Allen", role: "editor" },
+    ],
+    series: "World Cuisine",
+    seriesNumber: 1,
+    gallery: [
+      "/books/spain-cuisine/1.png",
+      "/books/spain-cuisine/2.png",
+      "/books/spain-cuisine/3.png",
+      "/books/spain-cuisine/4.png",
+      "/books/spain-cuisine/5.png",
+      "/books/spain-cuisine/6.png",
+      "/books/spain-cuisine/7.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0FQ3VTWRL",
+    },
+    category: "cooking",
+    author: "Cinnamon Press",
+    formats: ["paperback"],
+    collection: "Tavren Cooking",
+    cover: "/books/spain-cuisine/spain-cuisine.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Spain & Cuisine Cookbook",
+        subtitle: "The Essence of Spanish Gastronomy: History, Ingredients and Recipes",
+        shortDescription:
+          "A Spanish cookbook with more than 100 traditional recipes and a Mediterranean diet guide, inspired by the cuisines of Southern Spain.",
+        description: "Experience authentic Spanish flavors and the Mediterranean diet. This guide goes beyond simple tapas, bringing you more than 100 traditional Spanish recipes and an essential guide to the Mediterranean diet. Inspired by the sun-drenched cuisines of Southern Spain, it offers practical, weeknight-easy recipes for every home cook.\nInside you will find:\n- Regional specialties: the food traditions of Andalucía, the modern kitchens of Madrid and the rich heritage of the Basque Country\n- A healthy eating focus: every recipe is part of the Mediterranean diet, with plant-based options for building a healthier plate\n- Practical and quick: easy recipes you can make in 45 minutes or less, plus guides for meal planning and pantry-building\n- The experience: over 200 pages of tested recipes and beautiful photography",
+        amazonUrl: "https://www.amazon.com/dp/B0FQ3VTWRL",
+      },
+      es: {
+        subtitle: "La esencia de la gastronomía española: historia, ingredientes y recetas",
+        shortDescription:
+          "Un libro de cocina española con más de 100 recetas tradicionales y una guía de la dieta mediterránea, inspirado en las cocinas del sur de España.",
+        description: "Descubre los sabores auténticos de España y la dieta mediterránea. Esta guía va más allá de las simples tapas y te ofrece más de 100 recetas tradicionales españolas y una guía esencial de la dieta mediterránea. Inspirada en las cocinas soleadas del sur de España, ofrece recetas prácticas y fáciles para el día a día, para cualquier persona que cocine en casa.\nDentro encontrarás:\n- Especialidades regionales: las tradiciones culinarias de Andalucía, las cocinas modernas de Madrid y la rica herencia del País Vasco\n- Una alimentación saludable: todas las recetas forman parte de la dieta mediterránea, con opciones vegetales para construir un plato más sano\n- Práctico y rápido: recetas fáciles que puedes preparar en 45 minutos o menos, además de guías para planificar las comidas y organizar la despensa\n- La experiencia: más de 200 páginas de recetas probadas y fotografías preciosas",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2025-09-05",
+      pages: 201,
+      isbn: "979-8264034893",
+      asin: "B0FQ3VTWRL",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
