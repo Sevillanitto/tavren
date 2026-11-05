@@ -944,6 +944,61 @@ export const books: Book[] = [
       dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
+  {
+    slug: "korea-cuisine",
+    language: "en",
+    authorId: "cinnamon-press",
+    contributors: [
+      { name: "John A. Dillon", role: "author" },
+      { name: "Ross Allen", role: "editor" },
+    ],
+    series: "World Cuisine",
+    seriesNumber: 4,
+    gallery: [
+      "/books/korea-cuisine/1.png",
+      "/books/korea-cuisine/2.png",
+      "/books/korea-cuisine/3.png",
+      "/books/korea-cuisine/4.png",
+      "/books/korea-cuisine/5.png",
+      "/books/korea-cuisine/6.png",
+      "/books/korea-cuisine/7.png",
+      "/books/korea-cuisine/8.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0FSDS96NH",
+    },
+    category: "cooking",
+    author: "Cinnamon Press",
+    formats: ["paperback"],
+    collection: "Tavren Cooking",
+    cover: "/books/korea-cuisine/korea-cuisine.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Korea & Cuisine Cookbook",
+        subtitle: "The Essence of Korean Gastronomy: History, Ingredients and Recipes",
+        shortDescription:
+          "A Korean cookbook with more than 100 traditional recipes for home cooks, from Korean BBQ and street food to banchan, stews and sauces.",
+        description: "Welcome to the wide world of Korean flavors, made simple. This guide to Korean cuisine features more than 100 traditional recipes, designed for the home cook looking for quick and easy dishes without sacrificing bold flavor. Explore the foods of Koreatowns across America, from Seoul's vibrant scene to simple dishes you can make tonight.\nInside you will find:\n- The classics: approachable recipes for Korean BBQ favorites like bulgogi and kalbi, plus beloved street food like tteokbokki\n- Plant-based focus: creative plant-based dishes and tips for making traditional ingredients like kimchi and stews fully vegan\n- Simplified techniques: quick and easy recipes for beginners, with flavor shortcuts to boost taste and reduce prep time\n- Complete coverage: banchan, flavorful stews, noodles, soups and essential Korean sauces\n- The experience: over 200 pages of delicious meals, beautiful photography and stories of Korean food's global evolution\nBring restaurant-quality Korean meals to your table tonight.",
+        amazonUrl: "https://www.amazon.com/dp/B0FSDS96NH",
+      },
+      es: {
+        subtitle: "La esencia de la gastronomía coreana: historia, ingredientes y recetas",
+        shortDescription:
+          "Un libro de cocina coreana con más de 100 recetas tradicionales para cocinar en casa, del barbacoa coreana y la comida callejera a los banchan, los guisos y las salsas.",
+        description: "Te damos la bienvenida al amplio mundo de los sabores coreanos, hecho fácil. Esta guía de la cocina coreana reúne más de 100 recetas tradicionales, pensadas para quien cocina en casa y busca platos rápidos y sencillos sin renunciar a un sabor intenso. Explora la comida de los barrios coreanos de Estados Unidos, desde el ambiente vibrante de Seúl hasta platos sencillos que puedes preparar esta noche.\nDentro encontrarás:\n- Los clásicos: recetas accesibles de los favoritos de la barbacoa coreana, como el bulgogi y el kalbi, y de la comida callejera más querida, como el tteokbokki\n- Enfoque vegetal: platos vegetales creativos y consejos para preparar de forma totalmente vegana ingredientes tradicionales como el kimchi y los guisos\n- Técnicas simplificadas: recetas rápidas y fáciles para principiantes, con atajos de sabor para potenciar el gusto y reducir el tiempo de preparación\n- Cobertura completa: banchan, guisos sabrosos, fideos, sopas y las salsas coreanas esenciales\n- La experiencia: más de 200 páginas de platos deliciosos, fotografías preciosas e historias sobre la evolución global de la comida coreana\nLleva a tu mesa platos coreanos de calidad de restaurante esta noche.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2025-09-21",
+      pages: 201,
+      isbn: "979-8266527416",
+      asin: "B0FSDS96NH",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
+    },
+  },
 ];
 
 /** Vista de un libro en un idioma concreto (lo que usa la interfaz). */
