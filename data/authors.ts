@@ -31,6 +31,14 @@ export const authors: Author[] = [
       en: "Tavren Ediciones is the imprint under which this book is published.",
     },
   },
+  {
+    id: "cinnamon-press",
+    name: "Cinnamon Press",
+    bio: {
+      es: "Cinnamon Press es el nombre con el que se publica este libro.",
+      en: "Cinnamon Press is the name under which this book is published.",
+    },
+  },
 ];
 
 export function getAuthor(id: string): Author | undefined {

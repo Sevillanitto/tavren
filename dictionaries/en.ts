@@ -100,6 +100,7 @@ export const en = {
       publisher: "Publisher",
       author: "Author",
       illustration: "Illustration",
+      editor: "Editor",
       series: "Series",
       dimensions: "Dimensions",
       publicationDate: "Publication date",

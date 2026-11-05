@@ -10,6 +10,13 @@
 .gallery-fade {
   animation: gallery-fade 150ms ease-out;
 }
+/* Tira de miniaturas con scroll sin barra visible. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .gallery-fade { animation: none; }
 }

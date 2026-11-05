@@ -102,6 +102,7 @@ export const es: Dictionary = {
       publisher: "Editorial",
       author: "Autor",
       illustration: "Ilustración",
+      editor: "Editor",
       series: "Serie",
       dimensions: "Dimensiones",
       publicationDate: "Fecha de publicación",

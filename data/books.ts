@@ -49,7 +49,7 @@ export interface BookEdition {
 
 export interface Contributor {
   name: string;
-  role: "author" | "illustrator";
+  role: "author" | "illustrator" | "editor";
 }
 
 export interface Book {
@@ -778,6 +778,60 @@ export const books: Book[] = [
           dimensions: { width: 15.24, height: 22.86 }, // cm
         },
       },
+    },
+  },
+  {
+    slug: "thailand-cuisine",
+    language: "en",
+    authorId: "cinnamon-press",
+    contributors: [
+      { name: "John A. Dillon", role: "author" },
+      { name: "Ross Allen", role: "editor" },
+    ],
+    series: "World Cuisine",
+    seriesNumber: 3,
+    gallery: [
+      "/books/thailand-cuisine/1.png",
+      "/books/thailand-cuisine/2.png",
+      "/books/thailand-cuisine/3.png",
+      "/books/thailand-cuisine/4.png",
+      "/books/thailand-cuisine/5.png",
+      "/books/thailand-cuisine/6.png",
+      "/books/thailand-cuisine/7.png",
+    ],
+    amazonUrls: {
+      paperback: "https://www.amazon.com/dp/B0FQJF32GD",
+    },
+    category: "cooking",
+    author: "Cinnamon Press",
+    formats: ["paperback"],
+    collection: "Tavren Cooking",
+    cover: "/books/thailand-cuisine/thailand-cuisine.png",
+    coverStyle: "flat",
+    isNew: false,
+    translations: {
+      en: {
+        title: "Thailand & Cuisine Cookbook",
+        subtitle: "The Essence of Thai Gastronomy: History, Ingredients and Recipes",
+        shortDescription:
+          "A Thai cookbook with 101 classic recipes, from Bangkok street food to Southern Thai cuisine, with full-color photography.",
+        description: "Welcome the bold, complex flavors of Thailand into your kitchen. This guide to Thai cooking offers 101 classic recipes for home cooks, taking you from Bangkok street food to the heart of Southern Thai cuisine, and showing you how to recreate the genuine flavors of the food Thai people eat.\nInside you will find:\n- 101 Thai dishes: a curated collection of classic, regional and lesser-known recipes\n- Quick and easy recipes: detailed instructions for dishes you can make in 45 minutes or less\n- Plant-based options: vegetarian and plant-based takes on popular dishes\n- Authentic techniques: secrets for perfecting homemade curry pastes with intense, bold flavors\n- A visual guide: full-color photography and easy-to-follow instructions for every technique\nFire up your wok and get ready to cook authentic Thai food at home.",
+        amazonUrl: "https://www.amazon.com/dp/B0FQJF32GD",
+      },
+      es: {
+        subtitle: "La esencia de la gastronomía tailandesa: historia, ingredientes y recetas",
+        shortDescription:
+          "Un libro de cocina tailandesa con 101 recetas clásicas, de la comida callejera de Bangkok a la cocina del sur de Tailandia, con fotografías a todo color.",
+        description: "Trae a tu cocina los sabores intensos y complejos de Tailandia. Esta guía de cocina tailandesa ofrece 101 recetas clásicas para cocinar en casa, y te lleva de la comida callejera de Bangkok al corazón de la cocina del sur de Tailandia, para que recrees los sabores genuinos de lo que se come de verdad en Tailandia.\nDentro encontrarás:\n- 101 platos tailandeses: una colección cuidada de recetas clásicas, regionales y poco conocidas\n- Recetas rápidas y fáciles: instrucciones detalladas para platos que puedes preparar en 45 minutos o menos\n- Opciones vegetales: versiones vegetarianas y veganas de platos populares\n- Técnicas auténticas: los secretos para perfeccionar pastas de curry caseras, de sabor intenso\n- Una guía visual: fotografías a todo color e instrucciones fáciles de seguir para cada técnica\nEnciende el wok y prepárate para cocinar auténtica comida tailandesa en casa.",
+      },
+    },
+    details: {
+      publisher: "Tavren",
+      publicationDate: "2025-09-08",
+      pages: 201,
+      isbn: "979-8264415906",
+      asin: "B0FQJF32GD",
+      dimensions: { width: 15.24, height: 22.86 }, // cm
     },
   },
 ];

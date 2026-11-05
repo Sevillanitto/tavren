@@ -129,11 +129,16 @@ export default async function BookPage({
     .filter((c) => c.role === "illustrator")
     .map((c) => c.name)
     .join(", ");
+  const editors = contributors
+    .filter((c) => c.role === "editor")
+    .map((c) => c.name)
+    .join(", ");
   // Solo se muestran las filas que tengan valor.
   const rows = [
     { label: t.detailLabels.publisher, value: book.details.publisher },
     { label: t.detailLabels.author, value: authorsText },
     { label: t.detailLabels.illustration, value: illustrators },
+    { label: t.detailLabels.editor, value: editors },
     { label: t.detailLabels.series, value: seriesText },
     { label: t.detailLabels.publicationDate, value: date },
     {

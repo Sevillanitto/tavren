@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface GalleryImage {
   src: string;
@@ -16,6 +16,21 @@ export default function Gallery({
 }) {
   const [active, setActive] = useState(0);
   const thumbs = useRef<(HTMLButtonElement | null)[]>([]);
+  const strip = useRef<HTMLDivElement | null>(null);
+
+  // Mantiene la miniatura activa a la vista dentro de la tira (vertical en
+  // escritorio, horizontal en móvil) sin mover la página.
+  useEffect(() => {
+    const c = strip.current;
+    const b = thumbs.current[active];
+    if (!c || !b) return;
+    const cr = c.getBoundingClientRect();
+    const br = b.getBoundingClientRect();
+    if (br.top < cr.top) c.scrollTop += br.top - cr.top;
+    else if (br.bottom > cr.bottom) c.scrollTop += br.bottom - cr.bottom;
+    if (br.left < cr.left) c.scrollLeft += br.left - cr.left;
+    else if (br.right > cr.right) c.scrollLeft += br.right - cr.right;
+  }, [active]);
 
   function select(index: number, focus = false) {
     const next = (index + images.length) % images.length;
@@ -38,10 +53,13 @@ export default function Gallery({
       role="group"
       aria-label={label}
       onKeyDown={onKeyDown}
-      className="flex flex-col gap-6 md:flex-row md:gap-4"
+      className="relative flex flex-col gap-6 md:block"
     >
       {images.length > 1 && (
-      <div className="order-2 flex items-start gap-[15px] overflow-x-auto md:order-1 md:flex-col md:overflow-visible">
+      <div
+        ref={strip}
+        className="no-scrollbar order-2 flex items-start gap-[15px] overflow-x-auto md:absolute md:inset-y-0 md:left-0 md:w-[68px] md:flex-col md:overflow-y-auto md:overflow-x-hidden"
+      >
         {images.map((img, i) => (
           <button
             key={i}
@@ -72,7 +90,11 @@ export default function Gallery({
       </div>
       )}
 
-      <div className="order-1 flex flex-1 items-start justify-center px-2 md:order-2 md:px-6">
+      <div
+        className={`order-1 flex items-start justify-center px-2 md:px-6 ${
+          images.length > 1 ? "md:ml-[84px]" : ""
+        }`}
+      >
         {/* key: reinicia el fundido de 150 ms al cambiar de foto */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
