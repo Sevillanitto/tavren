@@ -10,6 +10,7 @@ export default function BuyBox({
   fallbackUrl,
   formatLabel,
   buyLabel,
+  comingSoonLabel,
 }: {
   formats: BookFormat[];
   labels: Record<BookFormat, string>;
@@ -17,11 +18,14 @@ export default function BuyBox({
   fallbackUrl: string;
   formatLabel: string;
   buyLabel: string;
+  comingSoonLabel: string;
 }) {
   const [format, setFormat] = useState<BookFormat>(
     formats.includes("paperback") ? "paperback" : formats[0],
   );
   const href = urls?.[format] ?? fallbackUrl;
+  // Sin enlace o "#": botón desactivado, sin enlace ni navegación.
+  const disabled = !href || href === "#";
 
   return (
     <div>
@@ -49,14 +53,24 @@ export default function BuyBox({
       </div>
       )}
 
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${formats.length > 1 ? "mt-6" : ""} flex h-12 items-center justify-center bg-ink px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90`}
-      >
-        {buyLabel}
-      </a>
+      {disabled ? (
+        <span
+          role="link"
+          aria-disabled="true"
+          className={`${formats.length > 1 ? "mt-6" : ""} flex h-12 cursor-default items-center justify-center border border-[#D9E3EA] bg-transparent px-6 text-xs font-medium uppercase tracking-[0.2em] text-ink/40`}
+        >
+          {comingSoonLabel}
+        </span>
+      ) : (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${formats.length > 1 ? "mt-6" : ""} flex h-12 items-center justify-center bg-ink px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90`}
+        >
+          {buyLabel}
+        </a>
+      )}
     </div>
   );
 }

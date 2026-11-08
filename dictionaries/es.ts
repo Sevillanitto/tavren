@@ -89,6 +89,7 @@ export const es: Dictionary = {
   },
   book: {
     buy: "Comprar en Amazon",
+    comingSoon: "Próximamente",
     back: "← Libros",
     coverOf: "Portada de",
     galleryLabel: "Galería de imágenes",

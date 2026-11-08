@@ -205,6 +205,7 @@ export default async function BookPage({
             fallbackUrl={book.amazonUrl}
             formatLabel={t.formatLabel}
             buyLabel={t.buy}
+            comingSoonLabel={t.comingSoon}
           />
         </div>
       </div>

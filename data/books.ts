@@ -45,6 +45,9 @@ export interface BookEdition {
   amazonUrls?: Partial<Record<BookFormat, string>>;
   amazonUrl?: string;
   details?: BookDetails;
+  /** Serie propia de esta edición (p. ej. "Fracture" en la edición inglesa). */
+  series?: string;
+  coverStyle?: CoverStyle;
 }
 
 export interface Contributor {
@@ -72,7 +75,8 @@ export interface Book {
   cover?: string; // ruta bajo /public, p. ej. "/covers/mi-libro.jpg"
   /**
    * Ediciones por idioma (opcional). Cada una puede definir cover, gallery,
-   * amazonUrls, amazonUrl y details; lo que falte se toma del libro. Con
+   * amazonUrls, amazonUrl, details, series y coverStyle; lo que falte se toma
+   * del libro (salvo gallery: si la edición la define se usa tal cual). Con
    * edición en es y en el libro se trata como language "both".
    */
   editions?: Partial<Record<Lang, BookEdition>>;
@@ -96,26 +100,14 @@ export const books: Book[] = [
   {
     // Libro real (escrito en español, con ficha también en inglés).
     slug: "lo-que-enterramos-antes-de-tiempo",
-    language: "es",
+    language: "both",
     authorId: "andre-olvera",
-    gallery: [
-      "/books/lo-que-enterramos-antes-de-tiempo/1.png",
-      "/books/lo-que-enterramos-antes-de-tiempo/2.png",
-      "/books/lo-que-enterramos-antes-de-tiempo/3.png",
-      "/books/lo-que-enterramos-antes-de-tiempo/4.png",
-    ],
-    amazonUrls: {
-      ebook: "https://www.amazon.es/dp/B0HPHQMXTY",
-      paperback: "https://www.amazon.es/dp/B0HPKLSSKY",
-      hardcover: "https://www.amazon.es/dp/B0HPZLHW5H",
-    },
     category: "noir",
     author: "André Olvera",
     series: "Fractura",
     seriesNumber: 1,
     formats: ["ebook", "paperback", "hardcover"],
     collection: "Narrativa Tavren",
-    cover: "/covers/lo-que-enterramos-antes-de-tiempo.png",
     isNew: false,
     translations: {
       es: {
@@ -128,26 +120,63 @@ export const books: Book[] = [
           "Un guionista que necesita entender lo ocurrido. Un cocinero que nunca habla de su pasado. Una inspectora que no ha podido cerrar un caso. Un detective que oculta más de lo que dice.\n" +
           "En noviembre de 2018, unas muertes en Queens los ponen en el mismo camino. A veces las historias no se cruzan por casualidad. Ninguno sabe todavía qué los une, y cuando lo descubran, nada de lo que creían saber seguirá en pie.\n" +
           "Una novela coral de misterio con ritmo de thriller, varias líneas de tiempo y un caso que se arma pieza a pieza.",
-        amazonUrl: "https://www.amazon.es/dp/B0HPKLSSKY",
       },
       en: {
+        title: "What We Buried Too Soon",
         subtitle: "A thriller",
         shortDescription:
-          "An ensemble mystery novel with the pace of a thriller, multiple timelines and a case that comes together piece by piece.",
+          "Four friends sit down to a private dinner in a Queens apartment. By morning, all four are dead.",
         description:
-          "In New York, thousands of people cross paths every day without knowing anything about each other. They share the same subway, the same neighborhood, sometimes the same wall. Each one with their own story, their own secrets, and something they have never told anyone.\n" +
-          "A screenwriter who needs to understand what happened. A chef who never speaks of his past. An inspector who has never managed to close a case. A detective who hides more than he says.\n" +
-          "In November 2018, a series of deaths in Queens puts them on the same path. Sometimes stories don't cross by chance. None of them yet knows what connects them, and when they find out, nothing they thought they knew will be left standing.\n" +
-          "An ensemble mystery novel with the pace of a thriller, multiple timelines and a case that comes together piece by piece.",
+          "Four friends sit down to a private dinner in a Queens apartment. By morning, all four are dead.\n" +
+          "The last person to see them alive was the chef. Elías Finch cooks with the precision of a man who has never made a mistake, and he never talks about his past. Detective Jennifer Connor Alvarado is the first to suspect that the case against him is too clean. Hank Beaumont, a veteran detective with a promotion in sight, knows more about Finch than he's willing to say. And Peter Maco, a screenwriter whose partner was one of the victims, can't stop asking the question the police have stopped asking.\n" +
+          "In New York, thousands of people pass each other every day without knowing a thing about one another. Sometimes the stories don't cross by chance.\n" +
+          "Never trust the silence of a man who knows more than he asks.",
       },
     },
-    details: {
-      publisher: "Tavren",
-      publicationDate: "2026-10-27",
-      pages: 368,
-      isbn: "979-8165629990",
-      asin: "B0HPKLSSKY",
-      dimensions: { width: 15.24, height: 22.86 }, // cm
+    details: { publisher: "Tavren" },
+    editions: {
+      es: {
+        cover: "/covers/lo-que-enterramos-antes-de-tiempo.png",
+        gallery: [
+          "/books/lo-que-enterramos-antes-de-tiempo/1.png",
+          "/books/lo-que-enterramos-antes-de-tiempo/2.png",
+          "/books/lo-que-enterramos-antes-de-tiempo/3.png",
+          "/books/lo-que-enterramos-antes-de-tiempo/4.png",
+        ],
+        amazonUrls: {
+          ebook: "https://www.amazon.es/dp/B0HPHQMXTY",
+          paperback: "https://www.amazon.es/dp/B0HPKLSSKY",
+          hardcover: "https://www.amazon.es/dp/B0HPZLHW5H",
+        },
+        amazonUrl: "https://www.amazon.es/dp/B0HPKLSSKY",
+        details: {
+          publicationDate: "2026-10-27",
+          pages: 368,
+          isbn: "979-8165629990",
+          asin: "B0HPKLSSKY",
+          dimensions: { width: 15.24, height: 22.86 }, // cm
+        },
+      },
+      en: {
+        cover: "/books/what we buried too soon/what-buried.png",
+        gallery: ["/books/what we buried too soon/what-buried.png"],
+        coverStyle: "mockup",
+        series: "Fracture",
+        // "#" = todavía sin enlace: el botón sale como "Próximamente".
+        amazonUrls: {
+          paperback: "https://www.amazon.com/dp/B0HQY76269",
+          ebook: "#",
+          hardcover: "#",
+        },
+        amazonUrl: "https://www.amazon.com/dp/B0HQY76269",
+        details: {
+          publicationDate: "2026-11-08",
+          pages: 408,
+          isbn: "979-8140947293",
+          asin: "B0HQY76269",
+          dimensions: { width: 15.24, height: 22.86 }, // cm
+        },
+      },
     },
   },
   {
@@ -1131,12 +1160,12 @@ function localize(book: Book, lang: Lang): LocalizedBook {
     author: book.author,
     authorId: book.authorId,
     contributors: book.contributors,
-    series: book.series,
+    series: ed?.series ?? book.series,
     seriesNumber: book.seriesNumber,
     formats: book.formats,
     gallery: ed?.gallery ?? book.gallery ?? [],
     amazonUrls: ed?.amazonUrls ?? book.amazonUrls,
-    coverStyle: book.coverStyle ?? "mockup",
+    coverStyle: ed?.coverStyle ?? book.coverStyle ?? "mockup",
     collection: book.collection,
     cover: ed?.cover ?? book.cover ?? "",
     isNew: book.isNew,
