@@ -1177,6 +1177,25 @@ function localize(book: Book, lang: Lang): LocalizedBook {
   };
 }
 
+/** Orden de las categorías en la home (las que no estén aquí van al final). */
+export const CATEGORY_ORDER: Category[] = ["noir", "cooking", "kids", "notebooks"];
+
+/**
+ * Ordena por categoría según CATEGORY_ORDER; dentro de cada categoría se
+ * mantiene el orden original del array (ordenación estable). No modifica el
+ * array recibido.
+ */
+export function sortBooks<T extends { category: Category }>(list: T[]): T[] {
+  const rank = (b: T) => {
+    const i = CATEGORY_ORDER.indexOf(b.category);
+    return i === -1 ? CATEGORY_ORDER.length : i;
+  };
+  return list
+    .map((b, i) => ({ b, i }))
+    .sort((x, y) => rank(x.b) - rank(y.b) || x.i - y.i)
+    .map(({ b }) => b);
+}
+
 /** Todos los libros, con el contenido en el idioma pedido. */
 export function getBooks(lang: Lang): LocalizedBook[] {
   return books.map((b) => localize(b, lang));

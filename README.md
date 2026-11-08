@@ -27,6 +27,8 @@ Comprobar el build de producción: `npm run build && npm start`.
    - Dentro de `description`, las líneas que empiezan por `- ` se muestran como lista con viñetas (úsalo tras una línea que termina en `:`, p. ej. "Dentro encontrarás:").
    - `editions` (opcional): una edición por idioma (`es` y/o `en`), cada una con su propia `cover`, `gallery`, `amazonUrls`, `amazonUrl`, `details` (asin, isbn, publicationDate, pages, dimensions), `series` (nombre de la serie en ese idioma; el número sigue siendo `seriesNumber` del libro) y `coverStyle`. Lo que falte en la edición se toma del libro; la excepción es `gallery`: si la edición la define se usa tal cual, aunque tenga una sola imagen (sin miniaturas). Si el enlace de un formato es `"#"` o no existe, el botón de compra sale desactivado con "Próximamente" / "Coming soon" (sin enlace). Ejemplo con serie y enlaces pendientes: `lo-que-enterramos-antes-de-tiempo`. Un libro con edición en los dos idiomas se trata como `"both"`: sin aviso de idioma ni indicador EN/ES, con la portada, la galería, el enlace y los datos de la edición del idioma de la página (la fila Idioma muestra el de esa edición). El título de cada idioma va en `translations`. Ejemplo: `el-jardin-magico`.
 
+El orden de la home se controla con `CATEGORY_ORDER` (en `data/books.ts`) y, dentro de cada categoría, con el orden de los libros en `data/books.ts`.
+
 Los libros escritos en el otro idioma aparecen en la home bajo la pastilla "En inglés" / "Books in Spanish" (con un indicador EN/ES) y enlazan a su ficha en el idioma de la página actual.
 
 Los textos de interfaz y las citas están en `dictionaries/en.ts` y `dictionaries/es.ts`. Los colores de marca, en `tailwind.config.ts`.

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
-import { getBooks, type LocalizedBook } from "@/data/books";
+import { getBooks, sortBooks, type LocalizedBook } from "@/data/books";
 import { PLACEHOLDER_COVER, resolveCover } from "@/lib/covers";
 import { isLang } from "@/lib/i18n";
 import Hero from "@/components/Hero";
@@ -38,7 +38,8 @@ export default async function HomePage({
     group,
     };
   };
-  const books = getBooks(lang).map(toCard);
+  // Orden por categoría (CATEGORY_ORDER); el filtrado del catálogo lo conserva.
+  const books = sortBooks(getBooks(lang)).map(toCard);
 
   return (
     <>
