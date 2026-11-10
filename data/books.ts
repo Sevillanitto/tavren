@@ -162,11 +162,10 @@ export const books: Book[] = [
         gallery: ["/books/what we buried too soon/what-buried.png"],
         coverStyle: "mockup",
         series: "Fracture",
-        // "#" = todavía sin enlace: el botón sale como "Próximamente".
         amazonUrls: {
           paperback: "https://www.amazon.com/dp/B0HQY76269",
-          ebook: "#",
-          hardcover: "#",
+          ebook: "https://www.amazon.com/dp/B0HQXP4N9H",
+          hardcover: "https://www.amazon.com/dp/B0HR6CRHKR",
         },
         amazonUrl: "https://www.amazon.com/dp/B0HQY76269",
         details: {
